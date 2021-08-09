@@ -8,5 +8,6 @@
     "rsync",
     "deployer"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "builders": "builders.json"
 }

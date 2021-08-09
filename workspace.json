@@ -28,7 +28,7 @@
             "tsConfig": "packages/nx-rsync-deployer/tsconfig.lib.json",
             "packageJson": "packages/nx-rsync-deployer/package.json",
             "main": "packages/nx-rsync-deployer/src/index.ts",
-            "assets": ["packages/nx-rsync-deployer/*.md"]
+            "assets": ["packages/nx-rsync-deployer/*.md", "packages/nx-rsync-deployer/builders.json"]
           }
         }
       }
