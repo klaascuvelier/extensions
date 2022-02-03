@@ -5,13 +5,21 @@ const { properties: schemaProperties } = require('./schema.json');
 
 const NxBuilder = createBuilder(async (builderConfig, context) => {
   const { project } = context.target;
-  const { deployIdentifier, previewUrl, rsyncTarget, rsyncUser, rsyncHost, preDeploy, postDeploy } = extractConfig(
-    builderConfig
-  );
+  const {
+    deployIdentifier,
+    previewUrl,
+    rsyncTarget,
+    rsyncUser,
+    rsyncHost,
+    preDeploy,
+    postDeploy,
+  } = extractConfig(builderConfig);
 
   const projectInfo = angularProjects[project];
   const buildOutputPath = projectInfo.architect.build.options.outputPath;
-  const deployUrl = previewUrl.replace('$deployIdentifier', deployIdentifier) + (previewUrl.endsWith('/') ? '' : '/');
+  const deployUrl =
+    previewUrl.replace('$deployIdentifier', deployIdentifier) +
+    (previewUrl.endsWith('/') ? '' : '/');
 
   if (builderConfig.noBuild) {
     context.logger.info(`📦 Skipping build`);
@@ -56,7 +64,16 @@ const NxBuilder = createBuilder(async (builderConfig, context) => {
     context.logger.info(`✔ Build Completed`);
   }
 
-  return deploy(context, deployIdentifier, buildOutputPath, rsyncTarget, rsyncUser, rsyncHost, preDeploy, postDeploy)
+  return deploy(
+    context,
+    deployIdentifier,
+    buildOutputPath,
+    rsyncTarget,
+    rsyncUser,
+    rsyncHost,
+    preDeploy,
+    postDeploy
+  )
     .then(() => {
       context.logger.info(`✔ Deploy Completed: ${deployUrl}`);
       return { success: true };
@@ -66,14 +83,30 @@ const NxBuilder = createBuilder(async (builderConfig, context) => {
 
 function extractConfig(config) {
   const deployIdentifier = normalizeText(
-    withFallback(addDeployReplacements(withFallback(config.deployIdentifier, withFallback(getGitBranch(), ''))))
+    withFallback(
+      addDeployReplacements(
+        withFallback(config.deployIdentifier, withFallback(getGitBranch(), ''))
+      )
+    )
   ).toLowerCase();
-  const rsyncTarget = stripEndSlash(withFallback(config.rsyncTarget, schemaProperties.rsyncTarget.default));
-  const rsyncUser = withFallback(config.rsyncUser, schemaProperties.rsyncUser.default);
-  const rsyncHost = withFallback(config.rsyncHost, schemaProperties.rsyncHost.default);
+  const rsyncTarget = stripEndSlash(
+    withFallback(config.rsyncTarget, schemaProperties.rsyncTarget.default)
+  );
+  const rsyncUser = withFallback(
+    config.rsyncUser,
+    schemaProperties.rsyncUser.default
+  );
+  const rsyncHost = withFallback(
+    config.rsyncHost,
+    schemaProperties.rsyncHost.default
+  );
   const previewUrl = withFallback(config.previewUrl, null);
-  const preDeploy = withFallback(config.preDeploy, []).map(addPrePostDeployReplacements).join(`,`);
-  const postDeploy = withFallback(config.postDeploy, []).map(addPrePostDeployReplacements).join(`,`);
+  const preDeploy = withFallback(config.preDeploy, [])
+    .map(addPrePostDeployReplacements)
+    .join(`,`);
+  const postDeploy = withFallback(config.postDeploy, [])
+    .map(addPrePostDeployReplacements)
+    .join(`,`);
 
   return {
     deployIdentifier,
@@ -110,7 +143,11 @@ function extractConfig(config) {
   function getCurrentDate() {
     const date = new Date();
 
-    return `${date.getFullYear()}${padStart(date.getMonth(), 2, '0')}${padStart(date.getDate(), 2, '0')}`;
+    return `${date.getFullYear()}${padStart(date.getMonth(), 2, '0')}${padStart(
+      date.getDate(),
+      2,
+      '0'
+    )}`;
   }
 
   function padStart(text, targetLength, padString) {
@@ -126,7 +163,9 @@ function extractConfig(config) {
   }
 
   function addDeployReplacements(text) {
-    return text.replace('$sha', getCurrentSha()).replace('$date', getCurrentDate());
+    return text
+      .replace('$sha', getCurrentSha())
+      .replace('$date', getCurrentDate());
   }
 }
 
@@ -137,7 +176,16 @@ function normalizeText(text) {
     .replace(/[\-]{1,}/, '-');
 }
 
-function deploy(context, deployIdentifier, source, target, user, host, preDeploy, postDeploy) {
+function deploy(
+  context,
+  deployIdentifier,
+  source,
+  target,
+  user,
+  host,
+  preDeploy,
+  postDeploy
+) {
   const privateKey = process.env.SSH_PRIVATE_KEY || '-';
   const args = [
     './deploy.sh',

@@ -10,7 +10,8 @@
           "executor": "@nrwl/linter:eslint",
           "options": {
             "lintFilePatterns": ["packages/nx-rsync-deployer/**/*.ts"]
-          }
+          },
+          "outputs": ["{options.outputFile}"]
         },
         "test": {
           "executor": "@nrwl/jest:jest",
@@ -28,13 +29,14 @@
             "tsConfig": "packages/nx-rsync-deployer/tsconfig.lib.json",
             "packageJson": "packages/nx-rsync-deployer/package.json",
             "main": "packages/nx-rsync-deployer/src/index.ts",
-            "assets": ["packages/nx-rsync-deployer/*.md", "packages/nx-rsync-deployer/builders.json"]
+            "assets": [
+              "packages/nx-rsync-deployer/*.md",
+              "packages/nx-rsync-deployer/builders.json"
+            ]
           }
         }
-      }
+      },
+      "tags": []
     }
-  },
-  "cli": {
-    "defaultCollection": "@nrwl/workspace"
   }
 }
