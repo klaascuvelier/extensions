@@ -1,6 +1,57 @@
 {
   "version": 2,
   "projects": {
+    "nx-netlify-deploy": {
+      "root": "packages/nx-netlify-deploy",
+      "sourceRoot": "packages/nx-netlify-deploy/src",
+      "projectType": "library",
+      "targets": {
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["packages/nx-netlify-deploy/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/packages/nx-netlify-deploy"],
+          "options": {
+            "jestConfig": "packages/nx-netlify-deploy/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "executor": "@nrwl/node:package",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/packages/nx-netlify-deploy",
+            "tsConfig": "packages/nx-netlify-deploy/tsconfig.lib.json",
+            "packageJson": "packages/nx-netlify-deploy/package.json",
+            "main": "packages/nx-netlify-deploy/src/index.ts",
+            "assets": [
+              "packages/nx-netlify-deploy/*.md",
+              {
+                "input": "./packages/nx-netlify-deploy/src",
+                "glob": "**/!(*.ts)",
+                "output": "./src"
+              },
+              {
+                "input": "./packages/nx-netlify-deploy/src",
+                "glob": "**/*.d.ts",
+                "output": "./src"
+              },
+              {
+                "input": "./packages/nx-netlify-deploy",
+                "glob": "{generators,executors}.json",
+                "output": "."
+              }
+            ]
+          }
+        }
+      },
+      "tags": []
+    },
     "nx-rsync-deployer": {
       "root": "packages/nx-rsync-deployer",
       "sourceRoot": "packages/nx-rsync-deployer/src",

@@ -1,0 +1,9 @@
+{
+  "name": "@k11r/nx-netlify-deploy",
+  "version": "0.0.3",
+  "generators": "./generators.json",
+  "executors": "./executors.json",
+  "peerDependencies": {
+    "netlify-cli": ">8"
+  }
+}
