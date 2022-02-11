@@ -5,23 +5,16 @@
   "description": "Deploys a project to Deno",
   "type": "object",
   "properties": {
-    "projectName": {
+    "token": {
       "type": "string",
-      "description": "Deno project name"
-    },
-    "entryPath": {
-      "type": "string",
-      "description": "Entry path in the project artifacts"
+      "description": "Optional token to use for deploy authentication",
+      "default": ""
     },
     "isProd": {
       "type": "boolean",
       "description": "Is production deploy",
       "default": false
-    },
-    "token": {
-      "type": "string",
-      "description": "Deploy token",
     }
   },
-  "required": ["projectName", "entryPath"]
+  "required": []
 }

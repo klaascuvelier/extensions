@@ -7,18 +7,17 @@ import {
     readProjectConfiguration,
 } from '@nrwl/devkit';
 import { applicationGenerator } from '@nrwl/node';
-import denoDeployGenerator from '../add-deploy-target/generator';
+import denoDeployGenerator from '../add-targets/generator';
 import { CreateDenoProjectSchema } from './schema';
 
 export default async function (tree: Tree, schema: CreateDenoProjectSchema) {
     await applicationGenerator(tree, schema);
 
-    const appName = schema.name;
-    const projectConfiguration = readProjectConfiguration(tree, schema.name);
+    const appName =
+        (schema.directory ? `${schema.directory}-` : '') + schema.name;
+    const projectConfiguration = readProjectConfiguration(tree, appName);
     const projectRoot = projectConfiguration.root;
-    const buildTarget = projectConfiguration.targets['build'];
-    const outputPath = buildTarget.options.outputPath;
-    const entryPath = joinPathFragments(outputPath, 'main.ts');
+    const mainFile = 'main.ts';
 
     // remove all files that were created
     tree.listChanges()
@@ -33,7 +32,11 @@ export default async function (tree: Tree, schema: CreateDenoProjectSchema) {
     });
 
     await formatFiles(tree);
-    await denoDeployGenerator(tree, { entryPath, appName });
+    await denoDeployGenerator(tree, {
+        mainFile,
+        appName,
+        denoProject: schema.denoProject ?? '',
+    });
 
     return () => {
         installPackagesTask(tree);

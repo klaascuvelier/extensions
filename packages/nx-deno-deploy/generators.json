@@ -3,15 +3,15 @@
   "name": "nx-netlify-deploy",
   "version": "0.0.1",
   "generators": {
-    "add-deploy-target": {
-      "factory": "./src/generators/add-deploy-target/generator",
-      "schema": "./src/generators/add-deploy-target/schema.json",
-      "description": "Adds the Deno deploy target"
+    "add-targets": {
+      "factory": "./src/generators/add-targets/generator",
+      "schema": "./src/generators/add-targets/schema.json",
+      "description": "Adds the Deno deploy, serve and test target"
     },
-    "project": {
-      "factory": "./src/generators/create-deno-project/index",
-      "schema": "./src/generators/create-deno-project/schema.json",
-      "description": "Creates a deno project"
+    "create-project": {
+      "factory": "./src/generators/create-project/index",
+      "schema": "./src/generators/create-project/schema.json",
+      "description": "Creates a Deno project"
     }
   }
 }

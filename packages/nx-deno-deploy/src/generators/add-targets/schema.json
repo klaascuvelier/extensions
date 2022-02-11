@@ -13,20 +13,17 @@
         "index": 0
       }
     },
-    "projectName": {
+    "denoProject": {
       "type": "string",
-      "description": "Name of the Deno project",
+      "description": "Name of the Deno project (if this differs from the appName)",
+      "default": ""
     },
-    "token": {
+    "mainFile": {
       "type": "string",
-      "description": "Optional authentication token"
-    },
-    "entryPath": {
-      "type": "string",
-      "description": "Entry path to deploy"
+      "default": "main.ts"
     }
   },
   "required": [
-    "projectName"
+    "appName", "mainFile"
   ]
 }
