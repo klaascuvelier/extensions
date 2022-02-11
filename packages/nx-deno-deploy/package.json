@@ -1,0 +1,9 @@
+{
+  "name": "@k11r/nx-deno-deploy",
+  "version": "0.0.1",
+  "generators": "./generators.json",
+  "executors": "./executors.json",
+  "peerDependencies": {
+    "@nrwl/node": "^13.8.0"
+  }
+}

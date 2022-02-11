@@ -1,0 +1,10 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "cli": "nx",
+  "title": "Test executor",
+  "description": "Test a Deno project",
+  "type": "object",
+  "properties": {
+  },
+  "required": []
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "name": "nx-netlify-deploy",
+  "version": "0.0.1",
+  "generators": {
+    "add-targets": {
+      "factory": "./src/generators/add-targets/generator",
+      "schema": "./src/generators/add-targets/schema.json",
+      "description": "Adds the Deno deploy, serve and test target"
+    },
+    "create-project": {
+      "factory": "./src/generators/create-project/index",
+      "schema": "./src/generators/create-project/schema.json",
+      "description": "Creates a Deno project"
+    }
+  }
+}
