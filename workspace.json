@@ -1,149 +1,189 @@
 {
-  "version": 2,
-  "projects": {
-    "nx-deno-deploy": {
-      "root": "packages/nx-deno-deploy",
-      "sourceRoot": "packages/nx-deno-deploy/src",
-      "projectType": "library",
-      "targets": {
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
-          "options": {
-            "lintFilePatterns": ["packages/nx-deno-deploy/**/*.ts"]
-          }
+    "version": 2,
+    "projects": {
+        "nx-cloudflare-workers": {
+            "root": "packages/nx-cloudflare-workers",
+            "sourceRoot": "packages/nx-cloudflare-workers/src",
+            "projectType": "library",
+            "targets": {
+                "lint": {
+                    "executor": "@nrwl/linter:eslint",
+                    "outputs": ["{options.outputFile}"],
+                    "options": {
+                        "lintFilePatterns": [
+                            "packages/nx-cloudflare-workers/**/*.ts"
+                        ]
+                    }
+                },
+                "test": {
+                    "executor": "@nrwl/jest:jest",
+                    "outputs": ["coverage/packages/nx-cloudflare-workers"],
+                    "options": {
+                        "jestConfig": "packages/nx-cloudflare-workers/jest.config.js",
+                        "passWithNoTests": true
+                    }
+                },
+                "build": {
+                    "executor": "@nrwl/node:package",
+                    "outputs": ["{options.outputPath}"],
+                    "options": {
+                        "outputPath": "dist/packages/nx-cloudflare-workers",
+                        "tsConfig": "packages/nx-cloudflare-workers/tsconfig.lib.json",
+                        "packageJson": "packages/nx-cloudflare-workers/package.json",
+                        "main": "packages/nx-cloudflare-workers/src/index.ts",
+                        "assets": ["packages/nx-cloudflare-workers/*.md"]
+                    }
+                }
+            },
+            "tags": []
         },
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/packages/nx-deno-deploy"],
-          "options": {
-            "jestConfig": "packages/nx-deno-deploy/jest.config.js",
-            "passWithNoTests": true
-          }
+        "nx-deno-deploy": {
+            "root": "packages/nx-deno-deploy",
+            "sourceRoot": "packages/nx-deno-deploy/src",
+            "projectType": "library",
+            "targets": {
+                "lint": {
+                    "executor": "@nrwl/linter:eslint",
+                    "outputs": ["{options.outputFile}"],
+                    "options": {
+                        "lintFilePatterns": ["packages/nx-deno-deploy/**/*.ts"]
+                    }
+                },
+                "test": {
+                    "executor": "@nrwl/jest:jest",
+                    "outputs": ["coverage/packages/nx-deno-deploy"],
+                    "options": {
+                        "jestConfig": "packages/nx-deno-deploy/jest.config.js",
+                        "passWithNoTests": true
+                    }
+                },
+                "build": {
+                    "executor": "@nrwl/node:package",
+                    "outputs": ["{options.outputPath}"],
+                    "options": {
+                        "outputPath": "dist/packages/nx-deno-deploy",
+                        "tsConfig": "packages/nx-deno-deploy/tsconfig.lib.json",
+                        "packageJson": "packages/nx-deno-deploy/package.json",
+                        "main": "packages/nx-deno-deploy/src/index.ts",
+                        "assets": [
+                            "packages/nx-netlify-deploy/*.md",
+                            {
+                                "input": "./packages/nx-deno-deploy/src",
+                                "glob": "**/!(*.ts)",
+                                "output": "./src"
+                            },
+                            {
+                                "input": "./packages/nx-deno-deploy/",
+                                "glob": "**/files/**",
+                                "output": "/"
+                            },
+                            {
+                                "input": "./packages/nx-deno-deploy/src",
+                                "glob": "**/*.d.ts",
+                                "output": "./src"
+                            },
+                            {
+                                "input": "./packages/nx-deno-deploy",
+                                "glob": "{generators,executors}.json",
+                                "output": "."
+                            }
+                        ]
+                    }
+                }
+            },
+            "tags": []
         },
-        "build": {
-          "executor": "@nrwl/node:package",
-          "outputs": ["{options.outputPath}"],
-          "options": {
-            "outputPath": "dist/packages/nx-deno-deploy",
-            "tsConfig": "packages/nx-deno-deploy/tsconfig.lib.json",
-            "packageJson": "packages/nx-deno-deploy/package.json",
-            "main": "packages/nx-deno-deploy/src/index.ts",
-            "assets": [
-              "packages/nx-netlify-deploy/*.md",
-              {
-                "input": "./packages/nx-deno-deploy/src",
-                "glob": "**/!(*.ts)",
-                "output": "./src"
-              },
-              {
-                "input": "./packages/nx-deno-deploy/",
-                "glob": "**/files/**",
-                "output": "/"
-              },
-              {
-                "input": "./packages/nx-deno-deploy/src",
-                "glob": "**/*.d.ts",
-                "output": "./src"
-              },
-              {
-                "input": "./packages/nx-deno-deploy",
-                "glob": "{generators,executors}.json",
-                "output": "."
-              }
-            ]
-          }
+        "nx-netlify-deploy": {
+            "root": "packages/nx-netlify-deploy",
+            "sourceRoot": "packages/nx-netlify-deploy/src",
+            "projectType": "library",
+            "targets": {
+                "lint": {
+                    "executor": "@nrwl/linter:eslint",
+                    "outputs": ["{options.outputFile}"],
+                    "options": {
+                        "lintFilePatterns": [
+                            "packages/nx-netlify-deploy/**/*.ts"
+                        ]
+                    }
+                },
+                "test": {
+                    "executor": "@nrwl/jest:jest",
+                    "outputs": ["coverage/packages/nx-netlify-deploy"],
+                    "options": {
+                        "jestConfig": "packages/nx-netlify-deploy/jest.config.js",
+                        "passWithNoTests": true
+                    }
+                },
+                "build": {
+                    "executor": "@nrwl/node:package",
+                    "outputs": ["{options.outputPath}"],
+                    "options": {
+                        "outputPath": "dist/packages/nx-netlify-deploy",
+                        "tsConfig": "packages/nx-netlify-deploy/tsconfig.lib.json",
+                        "packageJson": "packages/nx-netlify-deploy/package.json",
+                        "main": "packages/nx-netlify-deploy/src/index.ts",
+                        "assets": [
+                            "packages/nx-netlify-deploy/*.md",
+                            {
+                                "input": "./packages/nx-netlify-deploy/src",
+                                "glob": "**/!(*.ts)",
+                                "output": "./src"
+                            },
+                            {
+                                "input": "./packages/nx-netlify-deploy/src",
+                                "glob": "**/*.d.ts",
+                                "output": "./src"
+                            },
+                            {
+                                "input": "./packages/nx-netlify-deploy",
+                                "glob": "{generators,executors}.json",
+                                "output": "."
+                            }
+                        ]
+                    }
+                }
+            },
+            "tags": []
+        },
+        "nx-rsync-deployer": {
+            "root": "packages/nx-rsync-deployer",
+            "sourceRoot": "packages/nx-rsync-deployer/src",
+            "projectType": "library",
+            "targets": {
+                "lint": {
+                    "executor": "@nrwl/linter:eslint",
+                    "options": {
+                        "lintFilePatterns": [
+                            "packages/nx-rsync-deployer/**/*.ts"
+                        ]
+                    },
+                    "outputs": ["{options.outputFile}"]
+                },
+                "test": {
+                    "executor": "@nrwl/jest:jest",
+                    "outputs": ["coverage/packages/nx-rsync-deployer"],
+                    "options": {
+                        "jestConfig": "packages/nx-rsync-deployer/jest.config.js",
+                        "passWithNoTests": true
+                    }
+                },
+                "build": {
+                    "executor": "@nrwl/node:package",
+                    "outputs": ["{options.outputPath}"],
+                    "options": {
+                        "outputPath": "dist/packages/nx-rsync-deployer",
+                        "tsConfig": "packages/nx-rsync-deployer/tsconfig.lib.json",
+                        "packageJson": "packages/nx-rsync-deployer/package.json",
+                        "main": "packages/nx-rsync-deployer/src/index.ts",
+                        "assets": [
+                            "packages/nx-rsync-deployer/*.md",
+                            "packages/nx-rsync-deployer/builders.json"
+                        ]
+                    }
+                }
+            },
+            "tags": []
         }
-      },
-      "tags": []
-    },
-    "nx-netlify-deploy": {
-      "root": "packages/nx-netlify-deploy",
-      "sourceRoot": "packages/nx-netlify-deploy/src",
-      "projectType": "library",
-      "targets": {
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
-          "options": {
-            "lintFilePatterns": ["packages/nx-netlify-deploy/**/*.ts"]
-          }
-        },
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/packages/nx-netlify-deploy"],
-          "options": {
-            "jestConfig": "packages/nx-netlify-deploy/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "build": {
-          "executor": "@nrwl/node:package",
-          "outputs": ["{options.outputPath}"],
-          "options": {
-            "outputPath": "dist/packages/nx-netlify-deploy",
-            "tsConfig": "packages/nx-netlify-deploy/tsconfig.lib.json",
-            "packageJson": "packages/nx-netlify-deploy/package.json",
-            "main": "packages/nx-netlify-deploy/src/index.ts",
-            "assets": [
-              "packages/nx-netlify-deploy/*.md",
-              {
-                "input": "./packages/nx-netlify-deploy/src",
-                "glob": "**/!(*.ts)",
-                "output": "./src"
-              },
-              {
-                "input": "./packages/nx-netlify-deploy/src",
-                "glob": "**/*.d.ts",
-                "output": "./src"
-              },
-              {
-                "input": "./packages/nx-netlify-deploy",
-                "glob": "{generators,executors}.json",
-                "output": "."
-              }
-            ]
-          }
-        }
-      },
-      "tags": []
-    },
-    "nx-rsync-deployer": {
-      "root": "packages/nx-rsync-deployer",
-      "sourceRoot": "packages/nx-rsync-deployer/src",
-      "projectType": "library",
-      "targets": {
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["packages/nx-rsync-deployer/**/*.ts"]
-          },
-          "outputs": ["{options.outputFile}"]
-        },
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/packages/nx-rsync-deployer"],
-          "options": {
-            "jestConfig": "packages/nx-rsync-deployer/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "build": {
-          "executor": "@nrwl/node:package",
-          "outputs": ["{options.outputPath}"],
-          "options": {
-            "outputPath": "dist/packages/nx-rsync-deployer",
-            "tsConfig": "packages/nx-rsync-deployer/tsconfig.lib.json",
-            "packageJson": "packages/nx-rsync-deployer/package.json",
-            "main": "packages/nx-rsync-deployer/src/index.ts",
-            "assets": [
-              "packages/nx-rsync-deployer/*.md",
-              "packages/nx-rsync-deployer/builders.json"
-            ]
-          }
-        }
-      },
-      "tags": []
     }
-  }
 }

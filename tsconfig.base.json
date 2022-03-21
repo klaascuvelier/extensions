@@ -1,24 +1,31 @@
 {
-  "compileOnSave": false,
-  "compilerOptions": {
-    "rootDir": ".",
-    "sourceMap": true,
-    "declaration": false,
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "importHelpers": true,
-    "target": "es2015",
-    "module": "esnext",
-    "lib": ["es2017", "dom"],
-    "skipLibCheck": true,
-    "skipDefaultLibCheck": true,
-    "baseUrl": ".",
-    "paths": {
-      "@k11r/nx-deno-deploy": ["packages/nx-deno-deploy/src/index.ts"],
-      "@k11r/nx-netlify-deploy": ["packages/nx-netlify-deploy/src/index.ts"],
-      "@k11r/nx-rsync-deployer": ["packages/nx-rsync-deployer/src/index.ts"]
-    }
-  },
-  "exclude": ["node_modules", "tmp"]
+    "compileOnSave": false,
+    "compilerOptions": {
+        "rootDir": ".",
+        "sourceMap": true,
+        "declaration": false,
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "importHelpers": true,
+        "target": "es2015",
+        "module": "esnext",
+        "lib": ["es2017", "dom"],
+        "skipLibCheck": true,
+        "skipDefaultLibCheck": true,
+        "baseUrl": ".",
+        "paths": {
+            "@k11r/nx-cloudflare-workers": [
+                "packages/nx-cloudflare-workers/src/index.ts"
+            ],
+            "@k11r/nx-deno-deploy": ["packages/nx-deno-deploy/src/index.ts"],
+            "@k11r/nx-netlify-deploy": [
+                "packages/nx-netlify-deploy/src/index.ts"
+            ],
+            "@k11r/nx-rsync-deployer": [
+                "packages/nx-rsync-deployer/src/index.ts"
+            ]
+        }
+    },
+    "exclude": ["node_modules", "tmp"]
 }

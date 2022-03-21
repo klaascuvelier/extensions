@@ -30,6 +30,7 @@
     "tslib": "^2.0.0"
   },
   "devDependencies": {
+    "@cloudflare/wrangler": "^1.19.9",
     "@nrwl/cli": "13.7.2",
     "@nrwl/eslint-plugin-nx": "13.7.2",
     "@nrwl/jest": "13.7.2",

@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "name": "nx-cloudflare-workers",
+  "version": "0.0.1",
+  "generators": {
+    "add-deploy-target": {
+      "factory": "./src/generators/worker/generator",
+      "schema": "./src/generators/worker/schema.json",
+      "description": "Creates new worker project"
+    }
+  }
+}

@@ -4,11 +4,12 @@ This project was generated using [Nx](https://nx.dev).
 
 ## Available packages
 
-| Package                                                     | Description                                    |
-|-------------------------------------------------------------|------------------------------------------------|
-| [nx-deno-deploy](./packages/nx-deno-deploy/README.md)       | Deploy projects to Deno deploy                 |
-| [nx-netlify-deploy](./packages/nx-netlify-deploy/README.md) | Deployer and generator for Netlify pages       |
-| [nx-rsync-deployer](./packages/nx-rsync-deployer/README.md) | Deployer to upload app artifacts using _rsync_ |
+| Package                                                             | Description                                    |
+|---------------------------------------------------------------------|------------------------------------------------|
+| [nx-cloudflare-workers](./packages/nx-cloudflare-workers/README.md) | Generate and deploy Cloudflare workers         |
+| [nx-deno-deploy](./packages/nx-deno-deploy/README.md)               | Deploy projects to Deno deploy                 |
+| [nx-netlify-deploy](./packages/nx-netlify-deploy/README.md)         | Deployer and generator for Netlify pages       |
+| [nx-rsync-deployer](./packages/nx-rsync-deployer/README.md)         | Deployer to upload app artifacts using _rsync_ |
 
 ## Contribution
 

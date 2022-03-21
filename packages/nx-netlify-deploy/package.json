@@ -4,6 +4,6 @@
   "generators": "./generators.json",
   "executors": "./executors.json",
   "peerDependencies": {
-    "netlify-cli": ">8"
+    "@cloudflare/wrangler": "^1.19.9"
   }
 }
