@@ -17,7 +17,7 @@
                     "executor": "@nrwl/jest:jest",
                     "outputs": ["coverage/packages/nx-deno-deploy"],
                     "options": {
-                        "jestConfig": "packages/nx-deno-deploy/jest.config.js",
+                        "jestConfig": "packages/nx-deno-deploy/jest.config.ts",
                         "passWithNoTests": true
                     }
                 },
@@ -75,7 +75,7 @@
                     "executor": "@nrwl/jest:jest",
                     "outputs": ["coverage/packages/nx-netlify-deploy"],
                     "options": {
-                        "jestConfig": "packages/nx-netlify-deploy/jest.config.js",
+                        "jestConfig": "packages/nx-netlify-deploy/jest.config.ts",
                         "passWithNoTests": true
                     }
                 },
@@ -128,7 +128,7 @@
                     "executor": "@nrwl/jest:jest",
                     "outputs": ["coverage/packages/nx-rsync-deployer"],
                     "options": {
-                        "jestConfig": "packages/nx-rsync-deployer/jest.config.js",
+                        "jestConfig": "packages/nx-rsync-deployer/jest.config.ts",
                         "passWithNoTests": true
                     }
                 },
