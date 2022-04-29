@@ -1,0 +1,22 @@
+{
+  "$schema": "../../../../../node_modules/@nrwl/node/src/generators/application/schema.json",
+  "cli": "nx",
+  "$id": "SstProject",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Identifier for the SST project",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What is the name of the app?"
+    },
+    "awsProfile": {
+      "type": "string",
+      "description": "AWS profile name, if default cannot be used"
+    }
+  },
+  "required": ["name"]
+}

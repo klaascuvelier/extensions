@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "name": "nx-netlify-deploy",
+  "version": "0.0.1",
+  "generators": {
+    "typescript": {
+      "factory": "./src/generators/sst-typescript/index",
+      "schema": "./src/generators/sst-typescript/schema.json",
+      "description": "Creates a new SST typescript project"
+    }
+  }
+}
