@@ -1,6 +1,6 @@
 # NxAdditions
 
-This project was generated using [Nx](https://nx.dev).
+A set of very poorly documented and maintained plugins for NX workspaces.
 
 ## Available packages
 
