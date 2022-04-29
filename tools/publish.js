@@ -3,6 +3,7 @@ const { cwd } = require('process');
 const { getProjects } = require('@nrwl/devkit');
 const { FsTree } = require('@nrwl/tao/src/shared/tree');
 const semanticRelease = require('semantic-release');
+const { readFileSync, writeFileSync, existsSync } = require('fs');
 
 (async function publish() {
     buildProjects();
@@ -17,9 +18,11 @@ const semanticRelease = require('semantic-release');
     const packages = getPackages();
 
     for (const package of packages) {
-        const [name, location] = package;
-        publishPackage(name, location, version, otp);
+        const [name, destionation, source] = package;
+        publishPackage(name, destionation, source, version, otp);
     }
+
+    execSync(`npm version ${version}`);
 })();
 
 function getOtp() {
@@ -51,23 +54,35 @@ function getPackages() {
 
     return Array.from(projects.entries()).map((entry) => {
         const [name, config] = entry;
-        return [name, config.targets.build.options.outputPath];
+        return [name, config.targets.build.options.outputPath, config.root];
     });
 }
 
 async function getVersion() {
     const result = await semanticRelease();
-    if (result && result.releases && result.releases.length) {
-        return result.releases[0].version;
+
+    if (result && result.nextRelease) {
+        const { version, notes } = result.nextRelease;
+
+        const changelog =
+            notes +
+            (existsSync('CHANGELOG.md')
+                ? readFileSync('CHANGELOG.md', 'utf8')
+                : '');
+        writeFileSync('CHANGELOG.md', changelog);
+
+        return version;
     }
+
     return null;
 }
 
-function publishPackage(package, path, version, otp) {
+function publishPackage(package, destination, source, version, otp) {
     console.log(`Publishing ${package} to version ${version}`);
     try {
-        execSync(`npm version ${version}`, { cwd: path });
+        execSync(`npm version ${version}`, { cwd: destination });
+        execSync(`npm version ${version}`, { cwd: source });
     } catch (e) {}
 
-    execSync(`npm publish -access public -otp ${otp}`, { cwd: path });
+    execSync(`npm publish -access public -otp ${otp}`, { cwd: destination });
 }

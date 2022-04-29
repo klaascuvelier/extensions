@@ -15,5 +15,6 @@ module.exports = {
                 releaseRules: [{ type: 'refactor', release: 'patch' }],
             },
         ],
+        '@semantic-release/release-notes-generator',
     ],
 };
