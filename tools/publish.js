@@ -27,6 +27,9 @@ const { git } = require('commitizen/dist/cli/strategies');
         const [name, destination, source] = package;
         publishPackage(name, destination, source, version, otp);
     }
+
+    // remove package.json updates
+    execSync(`git checkout -- packages`);
 })();
 
 function updateChangelog(notes) {
@@ -40,7 +43,7 @@ function updateChangelog(notes) {
 
 function pushGitTag(tag) {
     execSync(
-        `git add CHANGELOG.md package.json package-lock.json && git commit -m "release 🚀: ${tag} && git tag ${tag} && git push origin main --all"`
+        `git add CHANGELOG.md package.json package-lock.json && git commit -m "release 🚀: ${tag}" && git tag ${tag} && git push origin --all"`
     );
 }
 
