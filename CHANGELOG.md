@@ -1,3 +1,12 @@
+# [1.3.0](https://github.com/klaascuvelier/nx-additions/compare/v1.2.0...v1.3.0) (2022-05-06)
+
+
+### Features
+
+* no new feature, just testing release 2 ([9f627bd](https://github.com/klaascuvelier/nx-additions/commit/9f627bdf052e181ef437760ce8f86c29383d1513))
+
+
+
 # [1.1.0](https://github.com/klaascuvelier/nx-additions/compare/v1.0.0...v1.1.0) (2022-05-06)
 
 
