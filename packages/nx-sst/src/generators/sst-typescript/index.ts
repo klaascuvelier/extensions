@@ -3,7 +3,6 @@ import {
     formatFiles,
     installPackagesTask,
     generateFiles,
-    getWorkspaceLayout,
     joinPathFragments,
     readProjectConfiguration,
     names,
@@ -11,6 +10,13 @@ import {
 } from '@nrwl/devkit';
 import { applicationGenerator } from '@nrwl/node';
 import { CreateSstProjectSchema } from './schema';
+
+const SST_OPTION_MAP = {
+    profile: 'profile',
+    stage: 'stage',
+    region: 'region',
+    'role-arn': 'roleArn',
+};
 
 export default async function projectGenerator(
     tree: Tree,
@@ -23,10 +29,21 @@ export default async function projectGenerator(
     const projectConfiguration = readProjectConfiguration(tree, appName);
     const projectRoot = projectConfiguration.root;
 
+    const sstOptions: Record<string, string> = Object.keys(
+        SST_OPTION_MAP
+    ).reduce((acc, optionKey) => {
+        const schemaKey = SST_OPTION_MAP[optionKey];
+        if (schema[schemaKey]?.length > 0) {
+            acc[optionKey] = schemaKey[schemaKey];
+        }
+
+        return acc;
+    }, {});
+
     const templatePath = joinPathFragments(__dirname, './files');
     const substitutions = {
         tmpl: '', // remove __tmpl__ from filenames
-        region: schema.awsRegion ?? 'eu-central-1',
+        region: sstOptions.region ?? 'eu-central-1',
         ...names(schema.name),
     };
 
@@ -47,7 +64,7 @@ export default async function projectGenerator(
 
     await formatFiles(tree);
     updateGitIgnore(tree);
-    addTargets(tree, schema.name, schema.awsProfile);
+    addTargets(tree, schema.name, sstOptions);
 
     console.log(tree.read('.gitignore').toString());
     return () => {
@@ -55,13 +72,15 @@ export default async function projectGenerator(
     };
 }
 
-function addTargets(tree: Tree, appName: string, awsProfile?: string) {
+function addTargets(
+    tree: Tree,
+    appName: string,
+    sstOptions: Record<string, string>
+) {
     try {
         const projectConfiguration = readProjectConfiguration(tree, appName);
         const options =
-            awsProfile?.length > 0
-                ? { options: { profile: awsProfile } }
-                : null;
+            Object.keys(sstOptions).length > 0 ? { options: sstOptions } : null;
 
         projectConfiguration.targets = {
             serve: {

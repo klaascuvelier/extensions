@@ -4,6 +4,7 @@ import { ExecutorContext, readProjectConfiguration } from '@nrwl/devkit';
 import { FsTree } from '@nrwl/tao/src/shared/tree';
 
 export type sstCommand = 'start' | 'test' | 'deploy' | 'remove';
+export const SST_OPTION_KEYS = ['profile', 'stage', 'region', 'role-arn'];
 
 export function runSstCommandForProject(
     options: ServeExecutorSchema,
@@ -17,7 +18,9 @@ export function runSstCommandForProject(
     const projectConfiguration = readProjectConfiguration(tree, projectName);
 
     const sstOptions = Object.keys(executorOptions).reduce((acc, option) => {
-        acc.push(`--${option}=${executorOptions[option]}`);
+        if (SST_OPTION_KEYS.includes(option)) {
+            acc.push(`--${option}=${executorOptions[option]}`);
+        }
 
         return acc;
     }, []);
