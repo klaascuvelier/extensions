@@ -1,3 +1,12 @@
+# [1.1.0](https://github.com/klaascuvelier/nx-additions/compare/v1.0.0...v1.1.0) (2022-05-06)
+
+
+### Features
+
+* new sst options ([52f3d9c](https://github.com/klaascuvelier/nx-additions/commit/52f3d9cf8ae7327376bfdda15fc8fa5fc3ed7753))
+
+
+
 # 1.0.0 (2022-04-29)
 
 
