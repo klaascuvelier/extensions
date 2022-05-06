@@ -40,7 +40,7 @@ function updateChangelog(notes) {
 
 function pushGitTag(tag) {
     execSync(
-        `git add CHANGELOG.md package.json package-lock.json && git commit -m "release 🚀: ${tag}"`
+        `git add CHANGELOG.md package.json package-lock.json && git commit -m "release 🚀: ${tag} && git tag ${tag} && git push origin main --all"`
     );
 }
 
