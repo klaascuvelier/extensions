@@ -1,3 +1,12 @@
+## [1.4.1](https://github.com/klaascuvelier/nx-additions/compare/v1.4.0...v1.4.1) (2022-05-06)
+
+
+### Bug Fixes
+
+* not an actual fix, just testing releases ([244026e](https://github.com/klaascuvelier/nx-additions/commit/244026e916ca266426753d4ee2fcb402f2490096))
+
+
+
 # [1.4.0](https://github.com/klaascuvelier/nx-additions/compare/v1.3.0...v1.4.0) (2022-05-06)
 
 
