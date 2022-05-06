@@ -4,16 +4,22 @@ const { getProjects } = require('@nrwl/devkit');
 const { FsTree } = require('@nrwl/tao/src/shared/tree');
 const semanticRelease = require('semantic-release');
 const { readFileSync, writeFileSync, existsSync } = require('fs');
+const { git } = require('commitizen/dist/cli/strategies');
 
 (async function publish() {
     buildProjects();
-    const version = await getVersion();
-    const otp = getOtp();
 
+    const { version, notes, gitTag } = await getVersion();
     if (!version) {
         console.log('no release');
         return;
     }
+
+    const otp = getOtp();
+
+    execSync(`npm version ${version}`);
+    updateChangelog(notes);
+    pushGitTag(gitTag);
 
     const packages = getPackages();
 
@@ -21,9 +27,22 @@ const { readFileSync, writeFileSync, existsSync } = require('fs');
         const [name, destination, source] = package;
         publishPackage(name, destination, source, version, otp);
     }
-
-    execSync(`npm version ${version}`);
 })();
+
+function updateChangelog(notes) {
+    const changelog =
+        notes +
+        (existsSync('CHANGELOG.md')
+            ? readFileSync('CHANGELOG.md', 'utf8')
+            : '');
+    writeFileSync('CHANGELOG.md', changelog);
+}
+
+function pushGitTag(tag) {
+    execSync(
+        `git add CHANGELOG.md package.json package-lock.json && git commit -m "release 🚀: ${tag}"`
+    );
+}
 
 function getOtp() {
     try {
@@ -62,19 +81,10 @@ async function getVersion() {
     const result = await semanticRelease();
 
     if (result && result.nextRelease) {
-        const { version, notes } = result.nextRelease;
-
-        const changelog =
-            notes +
-            (existsSync('CHANGELOG.md')
-                ? readFileSync('CHANGELOG.md', 'utf8')
-                : '');
-        writeFileSync('CHANGELOG.md', changelog);
-
-        return version;
+        return result.nextRelease;
     }
 
-    return null;
+    return {};
 }
 
 function publishPackage(package, destination, source, version, otp) {
