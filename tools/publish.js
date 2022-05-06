@@ -18,8 +18,8 @@ const { readFileSync, writeFileSync, existsSync } = require('fs');
     const packages = getPackages();
 
     for (const package of packages) {
-        const [name, destionation, source] = package;
-        publishPackage(name, destionation, source, version, otp);
+        const [name, destination, source] = package;
+        publishPackage(name, destination, source, version, otp);
     }
 
     execSync(`npm version ${version}`);
