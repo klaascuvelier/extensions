@@ -1,13 +1,13 @@
 {
-  "name": "@k11r/nx-rsync-deployer",
-  "version": "0.0.1",
-  "description": "Rsync deployer for NX monorepos",
-  "main": "",
-  "keywords": [
-    "nx",
-    "rsync",
-    "deployer"
-  ],
-  "license": "MIT",
-  "builders": "builders.json"
+    "name": "@k11r/nx-rsync-deployer",
+    "version": "0.0.1",
+    "description": "Rsync deployer for NX monorepos",
+    "main": "",
+    "keywords": [
+        "nx",
+        "rsync",
+        "deployer"
+    ],
+    "license": "MIT",
+    "builders": "builders.json"
 }

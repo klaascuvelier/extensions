@@ -1,6 +1,6 @@
 export interface DeployExecutorSchema {
-  siteId: string;
-  outputPath: string;
-  skipBuild?: boolean
-  prod?: boolean
+    siteId: string;
+    outputPath: string;
+    skipBuild?: boolean;
+    prod?: boolean;
 }

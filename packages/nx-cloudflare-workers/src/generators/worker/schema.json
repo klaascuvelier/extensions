@@ -1,33 +1,30 @@
 {
-  "$schema": "http://json-schema.org/schema",
-  "cli": "nx",
-  "$id": "AddDeployTarget",
-  "title": "",
-  "type": "object",
-  "properties": {
-    "name": {
-      "type": "string",
-      "description": "Name of the worker project",
-      "$default": {
-        "$source": "argv",
-        "index": 0
-      }
+    "$schema": "http://json-schema.org/schema",
+    "cli": "nx",
+    "$id": "AddDeployTarget",
+    "title": "",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "Name of the worker project",
+            "$default": {
+                "$source": "argv",
+                "index": 0
+            }
+        },
+        "type": {
+            "type": "string",
+            "description": "Worker type"
+        },
+        "template": {
+            "type": "string",
+            "description": "defaults to the https://github.com/cloudflare/worker-templatel;"
+        },
+        "outputPath": {
+            "type": "string",
+            "description": "Path to the artifacts"
+        }
     },
-    "type": {
-      "type": "string",
-      "description": "Worker type"
-    },
-    "template": {
-      "type": "string",
-      "description": "defaults to the https://github.com/cloudflare/worker-templatel;"
-    },
-    "outputPath": {
-      "type": "string",
-      "description": "Path to the artifacts"
-    }
-  },
-  "required": [
-    "appName",
-    "siteId"
-  ]
+    "required": ["appName", "siteId"]
 }

@@ -1,20 +1,20 @@
 {
-  "$schema": "http://json-schema.org/schema",
-  "executors": {
-    "serve": {
-      "implementation": "./src/executors/serve/executor",
-      "schema": "./src/executors/serve/schema.json",
-      "description": "Run Deno project locally"
-    },
-    "test": {
-      "implementation": "./src/executors/test/executor",
-      "schema": "./src/executors/test/schema.json",
-      "description": "Test Deno project"
-    },
-    "deploy": {
-      "implementation": "./src/executors/deploy/executor",
-      "schema": "./src/executors/deploy/schema.json",
-      "description": "Deno deploy executor"
+    "$schema": "http://json-schema.org/schema",
+    "executors": {
+        "serve": {
+            "implementation": "./src/executors/serve/executor",
+            "schema": "./src/executors/serve/schema.json",
+            "description": "Run Deno project locally"
+        },
+        "test": {
+            "implementation": "./src/executors/test/executor",
+            "schema": "./src/executors/test/schema.json",
+            "description": "Test Deno project"
+        },
+        "deploy": {
+            "implementation": "./src/executors/deploy/executor",
+            "schema": "./src/executors/deploy/schema.json",
+            "description": "Deno deploy executor"
+        }
     }
-  }
 }

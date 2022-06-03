@@ -1,6 +1,6 @@
 # nx-deno-deploy
 
-Requires [Deno](https://deno.com/deploy) and [deno-ctl](https://github.com/denoland/deployctl) 
+Requires [Deno](https://deno.com/deploy) and [deno-ctl](https://github.com/denoland/deployctl)
 
 ## Executors
 
@@ -10,7 +10,7 @@ Serves the project using `deno run`.
 
 All flags can be provided in the project configuration.s
 
-### Test 
+### Test
 
 Test the project using `deno test`
 

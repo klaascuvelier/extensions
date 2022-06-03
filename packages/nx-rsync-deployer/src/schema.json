@@ -1,50 +1,50 @@
 {
-  "id": "Schema",
-  "title": "schema",
-  "description": "Deployment of apps through rsync",
-  "properties": {
-    "noBuild": {
-      "type": "boolean",
-      "default": false,
-      "description": "Skip build process during deployment. This could result in incorrect deployUrl and baseHref for the deployed application"
-    },
-    "outputPath": {
-      "type": "string",
-      "description": "This is one of the options you can freely choose according to your needs. --- We will 'deploy' to this folder."
-    },
-    "deployIdentifier": {
-      "type": "string",
-      "description": "Unique ID to identify the deploy. Will be used as subfolder on the static host. Leaving it empty will use current branch"
-    },
-    "previewUrl": {
-      "type": "string",
-      "description": "The URL to access deployed app in the browser (without deployIdentifier). E.g. https://static.host.com/"
-    },
-    "rsyncTarget": {
-      "type": "string",
-      "description": "Path"
-    },
-    "rsyncUser": {
-      "type": "string",
-      "description": "User used to log in into the rsync host"
-    },
-    "rsyncHost": {
-      "type": "string",
-      "description": "Host to connect to with rsync"
-    },
-    "preDeploy": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      },
-      "description": "List of commands to execute on the host before the deploy over SSH"
-    },
-    "postDeploy": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      },
-      "description": "List of commands to execute on the host after the deploy over SSH"
+    "id": "Schema",
+    "title": "schema",
+    "description": "Deployment of apps through rsync",
+    "properties": {
+        "noBuild": {
+            "type": "boolean",
+            "default": false,
+            "description": "Skip build process during deployment. This could result in incorrect deployUrl and baseHref for the deployed application"
+        },
+        "outputPath": {
+            "type": "string",
+            "description": "This is one of the options you can freely choose according to your needs. --- We will 'deploy' to this folder."
+        },
+        "deployIdentifier": {
+            "type": "string",
+            "description": "Unique ID to identify the deploy. Will be used as subfolder on the static host. Leaving it empty will use current branch"
+        },
+        "previewUrl": {
+            "type": "string",
+            "description": "The URL to access deployed app in the browser (without deployIdentifier). E.g. https://static.host.com/"
+        },
+        "rsyncTarget": {
+            "type": "string",
+            "description": "Path"
+        },
+        "rsyncUser": {
+            "type": "string",
+            "description": "User used to log in into the rsync host"
+        },
+        "rsyncHost": {
+            "type": "string",
+            "description": "Host to connect to with rsync"
+        },
+        "preDeploy": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "List of commands to execute on the host before the deploy over SSH"
+        },
+        "postDeploy": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "List of commands to execute on the host after the deploy over SSH"
+        }
     }
-  }
 }

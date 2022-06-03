@@ -1,4 +1,4 @@
-import { ExecutorContext } from '@nrwl/tao/src/shared/workspace';
+import { ExecutorContext } from '@nrwl/devkit';
 import { DeployExecutorSchema } from './schema';
 import { deployProject } from '../../lib/deploy-ctl';
 import { FsTree } from '@nrwl/tao/src/shared/tree';
