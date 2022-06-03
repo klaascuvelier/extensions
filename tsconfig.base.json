@@ -15,6 +15,9 @@
         "skipDefaultLibCheck": true,
         "baseUrl": ".",
         "paths": {
+            "@k11r/nx-cloudflare-wrangler": [
+                "packages/nx-cloudflare-wrangler/src/index.ts"
+            ],
             "@k11r/nx-deno-deploy": ["packages/nx-deno-deploy/src/index.ts"],
             "@k11r/nx-netlify-deploy": [
                 "packages/nx-netlify-deploy/src/index.ts"
