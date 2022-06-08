@@ -1,3 +1,17 @@
+## [1.5.1](https://github.com/klaascuvelier/nx-additions/compare/v1.5.0...v1.5.1) (2022-06-08)
+
+
+### Bug Fixes
+
+* 🐛 a ton of fixes ([6be63cc](https://github.com/klaascuvelier/nx-additions/commit/6be63cc508076d8daac899c6b8c32394c2b4dd02))
+* 🐛 dont generate new app for pages ([65e6b12](https://github.com/klaascuvelier/nx-additions/commit/65e6b12f27d83016b44500de3da8401e79861f5c))
+* 🐛 Fix generators ([0bb575f](https://github.com/klaascuvelier/nx-additions/commit/0bb575f29f869ae55484b3520104075aca84015e))
+* 🐛 rename generators and add missing ones ([a3534a5](https://github.com/klaascuvelier/nx-additions/commit/a3534a511e6a86c2a68ea122fca611d43b7ed201))
+* 🐛 update assets for correct build ([109a2cd](https://github.com/klaascuvelier/nx-additions/commit/109a2cd6dd2edbe3f7356913c9a729b53564218e))
+* 🐛 update default toml files ([3de928d](https://github.com/klaascuvelier/nx-additions/commit/3de928d104dcabeb52f8f2471a127116d6cd4431))
+
+
+
 # [1.5.0](https://github.com/klaascuvelier/nx-additions/compare/v1.4.1...v1.5.0) (2022-06-08)
 
 
