@@ -31,7 +31,24 @@
                         "tsConfig": "packages/nx-cloudflare-wrangler/tsconfig.lib.json",
                         "packageJson": "packages/nx-cloudflare-wrangler/package.json",
                         "main": "packages/nx-cloudflare-wrangler/src/index.ts",
-                        "assets": ["packages/nx-cloudflare-wrangler/*.md"]
+                        "assets": [
+                            "packages/nx-cloudflare-wrangler/*.md",
+                            {
+                                "input": "./packages/nx-cloudflare-wrangler/src",
+                                "glob": "**/!(*.ts)",
+                                "output": "./src"
+                            },
+                            {
+                                "input": "./packages/nx-cloudflare-wrangler/src",
+                                "glob": "**/*.d.ts",
+                                "output": "./src"
+                            },
+                            {
+                                "input": "./packages/nx-cloudflare-wrangler",
+                                "glob": "{generators,executors}.json",
+                                "output": "."
+                            }
+                        ]
                     }
                 }
             },
