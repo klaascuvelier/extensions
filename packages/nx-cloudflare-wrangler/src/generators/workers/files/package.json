@@ -1,0 +1,13 @@
+{
+  "name": "<%= name %>",
+  "version": "0.0.1",
+  "private": true,
+  "devDependencies": {
+    "wrangler": "^2.0.0",
+    "esbuild": "^0.14.42"
+  },
+  "dependencies": {},
+  "scripts": {
+    "build": "esbuild --bundle --out ./dist/<%= name %>.js ./src/index.ts"
+  }
+}

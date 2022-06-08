@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "name": "nx-cloudflare-wrangler",
+  "version": "0.0.1",
+  "generators": {
+    "typescript": {
+      "factory": "./src/generators/workers/index",
+      "schema": "./src/generators/workers/schema.json",
+      "description": "Creates a new worker project"
+    }
+  }
+}

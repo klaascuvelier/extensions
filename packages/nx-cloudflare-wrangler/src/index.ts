@@ -1,1 +1,1 @@
-export * from './lib/nx-cloudflare-wrangler';
+export * from './generators/workers/index';

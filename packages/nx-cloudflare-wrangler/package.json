@@ -1,4 +1,10 @@
 {
-    "name": "@k11r/nx-cloudflare-wrangler",
-    "version": "0.0.1"
+  "name": "@k11r/nx-cloudflare-wrangler",
+  "version": "0.0.1",
+  "generators": "./generators.json",
+  "executors": "./executors.json",
+  "devDependencies": {
+    "wrangler": "^2.0.0",
+    "esbuild": "^0.14.42"
+  }
 }

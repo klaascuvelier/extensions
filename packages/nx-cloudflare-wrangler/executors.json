@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "executors": {
+    "serve-worker": {
+      "implementation": "./src/executors/workers/serve/executor",
+      "schema": "./src/executors/workers/serve/schema.json"
+    },
+    "test-worker": {
+      "implementation": "./src/executors/workers/test/executor",
+      "schema": "./src/executors/workers/test/schema.json"
+    },
+    "deploy-worker": {
+      "implementation": "./src/executors/workers/deploy/executor",
+      "schema": "./src/executors/workers/deploy/schema.json"
+    },
+    "deploy-page": {
+      "implementation": "./src/executors/pages/deploy/executor",
+      "schema": "./src/executors/pages/deploy/schema.json"
+    }
+  }
+}
