@@ -1,11 +1,15 @@
 # nx-cloudflare-wrangler
 
-This library was generated with [Nx](https://nx.dev).
+An executor and generator for Cloudflare Wrangler (workers and pages)
 
-## Running unit tests
+## Workers
 
-Run `nx test nx-cloudflare-wrangler` to execute the unit tests via [Jest](https://jestjs.io).
+### Generate a new worker project
 
-## Running lint
+`npx nx g @k11r/nx-netlify-deploy:worker <app-name>`
 
-Run `nx lint nx-cloudflare-wrangler` to execute the lint via [ESLint](https://eslint.org/).
+### Pages
+
+### Add `deploy` target to an existing project
+
+`npx nx g @k11r/nx-cloudflare-wrangler:pages <app-name>`
