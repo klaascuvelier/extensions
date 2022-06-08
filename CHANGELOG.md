@@ -1,3 +1,13 @@
+# [1.5.0](https://github.com/klaascuvelier/nx-additions/compare/v1.4.1...v1.5.0) (2022-06-08)
+
+
+### Features
+
+* 🎸 create nx-cloudflare-wrangler project ([7a5c392](https://github.com/klaascuvelier/nx-additions/commit/7a5c392cce849e5b25e310191491074e624b0c6b))
+* 🎸 work on wrangler2 generator ([6f37d2e](https://github.com/klaascuvelier/nx-additions/commit/6f37d2efe9aeca9c2155901ed924e72747fcd729))
+
+
+
 ## [1.4.1](https://github.com/klaascuvelier/nx-additions/compare/v1.4.0...v1.4.1) (2022-05-06)
 
 
