@@ -3,10 +3,15 @@
   "name": "nx-cloudflare-wrangler",
   "version": "0.0.1",
   "generators": {
-    "typescript": {
+    "worker": {
       "factory": "./src/generators/workers/index",
       "schema": "./src/generators/workers/schema.json",
       "description": "Creates a new worker project"
+    },
+    "pages": {
+      "factory": "./src/generators/pages/index",
+      "schema": "./src/generators/pages/schema.json",
+      "description": "Adds the pages deploy target to an existing project"
     }
   }
 }
