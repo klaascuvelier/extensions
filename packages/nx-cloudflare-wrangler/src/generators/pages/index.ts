@@ -15,8 +15,6 @@ export default async function projectGenerator(
     tree: Tree,
     schema: CloudflarePagesProjectSchema
 ) {
-    await applicationGenerator(tree, schema);
-
     const appName =
         (schema.directory ? `${schema.directory}-` : '') + schema.name;
     const projectConfiguration = readProjectConfiguration(tree, appName);
