@@ -1,1 +1,1 @@
-export interface DeployExecutorSchema {}
+export interface WorkerDeployExecutorSchema {}

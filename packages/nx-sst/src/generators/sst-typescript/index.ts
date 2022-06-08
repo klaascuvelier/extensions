@@ -66,7 +66,6 @@ export default async function projectGenerator(
     updateGitIgnore(tree);
     addTargets(tree, schema.name, sstOptions);
 
-    console.log(tree.read('.gitignore').toString());
     return () => {
         installPackagesTask(tree);
     };

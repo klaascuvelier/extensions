@@ -1,11 +1,8 @@
 name = "<%= name %>"
-type = "javascript"
-zone_id = "<%= zone_id %>"
 account_id = "<%= account_id %>"
-route = "<%= route_id %>"
+route = "<%= route %>"
 workers_dev = true
+compatibility_date = "<%= compatibility_date %>"
 
 [build]
 command = "nx run <%= name %>:build"
-[build.upload]
-format = "service-worker"

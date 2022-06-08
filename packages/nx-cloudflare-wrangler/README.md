@@ -6,7 +6,7 @@ An executor and generator for Cloudflare Wrangler (workers and pages)
 
 ### Generate a new worker project
 
-`npx nx g @k11r/nx-netlify-deploy:worker <app-name>`
+`npx nx g @k11r/nx-cloudflare-wrangler:worker <app-name>`
 
 Creates a new NX project (based on the node template) with a new worker.
 `build` and `deploy` targets are added automatically.

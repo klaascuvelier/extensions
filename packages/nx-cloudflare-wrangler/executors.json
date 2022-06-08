@@ -9,6 +9,10 @@
       "implementation": "./src/executors/workers/deploy/executor",
       "schema": "./src/executors/workers/deploy/schema.json"
     },
+    "build-worker": {
+      "implementation": "./src/executors/workers/build/executor",
+      "schema": "./src/executors/workers/build/schema.json"
+    },
     "deploy-page": {
       "implementation": "./src/executors/pages/deploy/executor",
       "schema": "./src/executors/pages/deploy/schema.json"

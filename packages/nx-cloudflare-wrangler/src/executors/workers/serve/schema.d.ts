@@ -1,1 +1,1 @@
-export interface ServeExecutorSchema {}
+export interface WorkerServeExecutorSchema {}

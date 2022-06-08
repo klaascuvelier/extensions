@@ -1,9 +1,9 @@
 import { ExecutorContext } from '@nrwl/devkit';
-import { DeployExecutorSchema } from './schema';
+import { WorkerDeployExecutorSchema } from './schema';
 import { runWranglerCommandForProject } from '../../wrangler';
 
 export default async function deployExecutor(
-    options: DeployExecutorSchema,
+    options: WorkerDeployExecutorSchema,
     context: ExecutorContext
 ) {
     return runWranglerCommandForProject(options, context, 'publish');

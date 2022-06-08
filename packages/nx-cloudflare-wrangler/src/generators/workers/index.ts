@@ -29,6 +29,7 @@ export default async function projectGenerator(
         account_id: schema.account_id ?? '',
         route: schema.route ?? '',
         workers_dev: schema.route ?? true,
+        compatibility_date: new Date().toISOString().split('T')[0],
         ...names(schema.name),
     };
 
@@ -49,36 +50,36 @@ export default async function projectGenerator(
 
     await formatFiles(tree);
     updateGitIgnore(tree);
-    addTargets(tree, schema.name, {});
+    addTargets(tree, schema.name);
 
-    console.log(tree.read('.gitignore').toString());
     return () => {
         installPackagesTask(tree);
     };
 }
 
-function addTargets(
-    tree: Tree,
-    appName: string,
-    cloudflareOptions: Record<string, string>
-) {
+function addTargets(tree: Tree, appName: string) {
     try {
         const projectConfiguration = readProjectConfiguration(tree, appName);
-        const options =
-            Object.keys(cloudflareOptions).length > 0
-                ? { options: cloudflareOptions }
-                : null;
+        const packageRoot = projectConfiguration.root;
+        const packageSourceRoot = projectConfiguration.sourceRoot;
 
         projectConfiguration.targets = {
             ...(projectConfiguration.targets ?? {}),
             serve: {
                 executor: '@k11r/nx-cloudflare-wrangler:serve-worker',
-                ...options,
             },
 
             deploy: {
                 executor: '@k11r/nx-cloudflare-wrangler:deploy-worker',
-                ...options,
+            },
+            build: {
+                executor: '@k11r/nx-cloudflare-wrangler:build-worker',
+                options: {
+                    outputPath: `dist/packages/${appName}`,
+                    tsConfig: `${packageRoot}/tsconfig.json`,
+                    packageJson: `${packageRoot}/package.json`,
+                    main: `${packageSourceRoot}/index.ts`,
+                },
             },
         };
 
