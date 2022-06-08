@@ -1,0 +1,11 @@
+name = "<%= name %>"
+type = "javascript"
+zone_id = "<%= zone_id %>"
+account_id = "<%= account_id %>"
+route = "<%= route_id %>"
+workers_dev = true
+
+[build]
+command = "npm install && npm run build"
+[build.upload]
+format = "service-worker"
