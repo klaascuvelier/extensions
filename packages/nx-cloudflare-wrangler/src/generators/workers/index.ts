@@ -72,12 +72,12 @@ function addTargets(
         projectConfiguration.targets = {
             ...(projectConfiguration.targets ?? {}),
             serve: {
-                executor: '@k11r/nx-cloudflare-wrangler:serve',
+                executor: '@k11r/nx-cloudflare-wrangler:serve-worker',
                 ...options,
             },
 
             deploy: {
-                executor: '@k11r/nx-cloudflare-wrangler:deploy',
+                executor: '@k11r/nx-cloudflare-wrangler:deploy-worker',
                 ...options,
             },
         };
