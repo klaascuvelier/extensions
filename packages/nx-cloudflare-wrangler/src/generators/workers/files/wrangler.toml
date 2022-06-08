@@ -6,6 +6,6 @@ route = "<%= route_id %>"
 workers_dev = true
 
 [build]
-command = "npm install && npm run build"
+command = "nx run <%= name %>:build"
 [build.upload]
 format = "service-worker"

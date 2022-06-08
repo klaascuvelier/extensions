@@ -1,11 +1,11 @@
-name = "worker-typescript-template"
+name = "<%= name %>"
 type = "javascript"
-zone_id = ""
-account_id = ""
-route = ""
+zone_id = "<%= zone_id %>"
+account_id = "<%= account_id %>"
+route = "<%= route_id %>"
 workers_dev = true
 
 [build]
-command = "npm install && npm run build"
+command = "nx run <%= name %>:build"
 [build.upload]
 format = "service-worker"
