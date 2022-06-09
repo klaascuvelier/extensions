@@ -1,3 +1,12 @@
+## [1.5.3](https://github.com/klaascuvelier/nx-additions/compare/v1.5.2...v1.5.3) (2022-06-09)
+
+
+### Bug Fixes
+
+* 🐛 fix netlify-cli peerDep ([da89408](https://github.com/klaascuvelier/nx-additions/commit/da894082d04ff12b1620ee7de6712e90169068cb))
+
+
+
 ## [1.5.2](https://github.com/klaascuvelier/nx-additions/compare/v1.5.1...v1.5.2) (2022-06-09)
 
 
