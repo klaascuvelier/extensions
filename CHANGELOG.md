@@ -1,3 +1,12 @@
+## [1.5.2](https://github.com/klaascuvelier/nx-additions/compare/v1.5.1...v1.5.2) (2022-06-09)
+
+
+### Bug Fixes
+
+* 🐛 update peerDeps ([38863f9](https://github.com/klaascuvelier/nx-additions/commit/38863f9e8a34f0e6e1be0e01067c77415a403ae8))
+
+
+
 ## [1.5.1](https://github.com/klaascuvelier/nx-additions/compare/v1.5.0...v1.5.1) (2022-06-08)
 
 
