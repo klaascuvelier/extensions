@@ -6,6 +6,6 @@
   "peerDependencies": {
     "@nrwl/devkit": "^13.0.0 || ^14.0.0",
     "@nrwl/tao": "^13.0.0 || ^14.0.0",
-    "netlify-cli": ">8"
+    "netlify-cli": "^8.0.0"
   }
 }
