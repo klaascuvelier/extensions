@@ -3,7 +3,10 @@
   "version": "0.0.1",
   "generators": "./generators.json",
   "executors": "./executors.json",
-  "devDependencies": {
+  "peerDependencies": {
+    "@nrwl/devkit": "^13.0.0 || ^14.0.0",
+    "@nrwl/node": "^13.0.0 || ^14.0.0",
+    "@nrwl/tao": "^13.0.0 || ^14.0.0",
     "wrangler": "^2.0.0",
     "esbuild": "^0.14.42"
   }

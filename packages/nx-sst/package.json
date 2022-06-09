@@ -4,7 +4,9 @@
   "generators": "./generators.json",
   "executors": "./executors.json",
   "peerDependencies": {
-    "@nrwl/node": "^14.0.5",
+    "@nrwl/devkit": "^13.0.0 || ^14.0.0",
+    "@nrwl/tao": "^13.0.0 || ^14.0.0",
+    "@nrwl/node": "^13.0.0 || ^14.0.0",
     "@serverless-stack/cli": "0.69.7",
     "@serverless-stack/resources": "0.69.7",
     "@tsconfig/node14": "^1.0.1",
