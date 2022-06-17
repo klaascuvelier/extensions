@@ -1,3 +1,12 @@
+## [1.5.4](https://github.com/klaascuvelier/nx-additions/compare/v1.5.3...v1.5.4) (2022-06-17)
+
+
+### Bug Fixes
+
+* 🐛 add main file in dev command ([bc6c627](https://github.com/klaascuvelier/nx-additions/commit/bc6c6276c64d09ea150afc7bfde61b2fcdfcdee4))
+
+
+
 ## [1.5.3](https://github.com/klaascuvelier/nx-additions/compare/v1.5.2...v1.5.3) (2022-06-09)
 
 
