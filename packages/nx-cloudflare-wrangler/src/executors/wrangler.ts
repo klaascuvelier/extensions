@@ -59,6 +59,13 @@ export function runWranglerCommandForProject(
                 'index.js'
             )
         );
+    } else if (command === 'dev') {
+        wranglerOptions.push(
+            joinPathFragments(
+                workspaceRoot,
+                projectConfiguration.targets.build.options.main
+            )
+        );
     }
 
     return new Promise((resolve) => {
