@@ -17,7 +17,9 @@
                 },
                 "test": {
                     "executor": "@nrwl/jest:jest",
-                    "outputs": ["coverage/packages/nx-cloudflare-wrangler"],
+                    "outputs": [
+                        "{workspaceRoot}/coverage/packages/nx-cloudflare-wrangler"
+                    ],
                     "options": {
                         "jestConfig": "packages/nx-cloudflare-wrangler/jest.config.ts",
                         "passWithNoTests": true
@@ -68,7 +70,9 @@
                 },
                 "test": {
                     "executor": "@nrwl/jest:jest",
-                    "outputs": ["coverage/packages/nx-deno-deploy"],
+                    "outputs": [
+                        "{workspaceRoot}/coverage/packages/nx-deno-deploy"
+                    ],
                     "options": {
                         "jestConfig": "packages/nx-deno-deploy/jest.config.ts",
                         "passWithNoTests": true
@@ -126,7 +130,9 @@
                 },
                 "test": {
                     "executor": "@nrwl/jest:jest",
-                    "outputs": ["coverage/packages/nx-netlify-deploy"],
+                    "outputs": [
+                        "{workspaceRoot}/coverage/packages/nx-netlify-deploy"
+                    ],
                     "options": {
                         "jestConfig": "packages/nx-netlify-deploy/jest.config.ts",
                         "passWithNoTests": true
@@ -179,7 +185,9 @@
                 },
                 "test": {
                     "executor": "@nrwl/jest:jest",
-                    "outputs": ["coverage/packages/nx-rsync-deployer"],
+                    "outputs": [
+                        "{workspaceRoot}/coverage/packages/nx-rsync-deployer"
+                    ],
                     "options": {
                         "jestConfig": "packages/nx-rsync-deployer/jest.config.ts",
                         "passWithNoTests": true
@@ -216,7 +224,7 @@
                 },
                 "test": {
                     "executor": "@nrwl/jest:jest",
-                    "outputs": ["coverage/packages/nx-sst"],
+                    "outputs": ["{workspaceRoot}/coverage/packages/nx-sst"],
                     "options": {
                         "jestConfig": "packages/nx-sst/jest.config.ts",
                         "passWithNoTests": true
@@ -253,5 +261,6 @@
             },
             "tags": []
         }
-    }
+    },
+    "$schema": "./node_modules/nx/schemas/workspace-schema.json"
 }
