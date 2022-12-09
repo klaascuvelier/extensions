@@ -1,3 +1,12 @@
+# [1.6.0](https://github.com/klaascuvelier/nx-additions/compare/v1.5.4...v1.6.0) (2022-12-09)
+
+
+### Features
+
+* sst upgrade ([8580777](https://github.com/klaascuvelier/nx-additions/commit/858077791e58b0b6c8123c26a0c6233c7ba9cb49))
+
+
+
 ## [1.5.4](https://github.com/klaascuvelier/nx-additions/compare/v1.5.3...v1.5.4) (2022-06-17)
 
 
