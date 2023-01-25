@@ -16,10 +16,9 @@ export function runWranglerCommandForProject(
         | WorkerDeployExecutorSchema
         | PagesDeployExecutorSchema,
     context: ExecutorContext,
-    command: 'dev' | 'publish' | 'pages publish'
+    command: 'dev' | 'publish' | 'pages publish' | 'pages dev'
 ) {
     const { projectName, target } = context;
-    const executorOptions = target.options ?? {};
 
     const tree = new FsTree(process.cwd(), false);
     const projectConfiguration = readProjectConfiguration(tree, projectName);
@@ -51,6 +50,8 @@ export function runWranglerCommandForProject(
                     ? 'true'
                     : 'false')
         );
+    } else if (command === 'pages dev') {
+        wranglerOptions.push((options as PagesDeployExecutorSchema).dist);
     } else if (command === 'publish') {
         wranglerOptions.push(
             joinPathFragments(
@@ -70,8 +71,8 @@ export function runWranglerCommandForProject(
 
     return new Promise((resolve) => {
         try {
-            console.log(`wrangler ${command} ${wranglerOptions.join(' ')}`);
-            execSync(`wrangler ${command} ${wranglerOptions.join(' ')}`, {
+            console.log(`npx wrangler ${command} ${wranglerOptions.join(' ')}`);
+            execSync(`npx wrangler ${command} ${wranglerOptions.join(' ')}`, {
                 cwd: projectConfiguration.root,
                 stdio: 'inherit',
             });

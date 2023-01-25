@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "cli": "nx",
+  "title": "Pages serve executor",
+  "type": "object",
+  "properties": {
+    "dist": {
+      "type": "string",
+      "description": "Location of the build output to serve"
+    }
+  },
+  "required": []
+}

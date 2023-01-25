@@ -13,6 +13,10 @@
       "implementation": "./src/executors/workers/build/executor",
       "schema": "./src/executors/workers/build/schema.json"
     },
+    "serve-page": {
+      "implementation": "./src/executors/pages/serve/executor",
+      "schema": "./src/executors/pages/serve/schema.json"
+    },
     "deploy-page": {
       "implementation": "./src/executors/pages/deploy/executor",
       "schema": "./src/executors/pages/deploy/schema.json"
