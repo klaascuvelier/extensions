@@ -65,7 +65,7 @@ function getOtp() {
 }
 
 function buildProjects() {
-    execSync('nx run-many --target=build --all', {
+    execSync('npx nx run-many --target=build --all', {
         stdio: 'inherit',
     });
 }
