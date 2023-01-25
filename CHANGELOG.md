@@ -1,3 +1,12 @@
+# [1.7.0](https://github.com/klaascuvelier/nx-additions/compare/v1.6.0...v1.7.0) (2023-01-25)
+
+
+### Features
+
+* **nx-cloudflare-wrangler:** add pages serve executor ([2f65c8f](https://github.com/klaascuvelier/nx-additions/commit/2f65c8fc50bd442bafdec5c54b42ada827a3bf25))
+
+
+
 # [1.6.0](https://github.com/klaascuvelier/nx-additions/compare/v1.5.4...v1.6.0) (2022-12-09)
 
 
