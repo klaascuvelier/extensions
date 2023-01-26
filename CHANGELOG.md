@@ -1,3 +1,17 @@
+# [2.0.0](https://github.com/klaascuvelier/nx-additions/compare/v1.7.0...v2.0.0) (2023-01-26)
+
+
+### Bug Fixes
+
+* **nx-cloudflare-wrangler:** custom dist path should be relative to project root ([65ca05f](https://github.com/klaascuvelier/nx-additions/commit/65ca05fb5591c5c3d9d9a71794fd9c0f39b924df))
+
+
+### BREAKING CHANGES
+
+* **nx-cloudflare-wrangler:** options.dist in "serve-page" and "deploy-page" executors are now relative to workspace root
+
+
+
 # [1.7.0](https://github.com/klaascuvelier/nx-additions/compare/v1.6.0...v1.7.0) (2023-01-25)
 
 
