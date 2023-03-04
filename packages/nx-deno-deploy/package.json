@@ -1,11 +1,11 @@
 {
-  "name": "@k11r/nx-deno-deploy",
-  "version": "1.0.0",
-  "generators": "./generators.json",
-  "executors": "./executors.json",
-  "peerDependencies": {
-    "@nrwl/devkit": "^14.0.0 || ^15.0.0",
-    "@nrwl/node": "^14.0.0 || ^15.0.0",
-    "@nrwl/tao": "^14.0.0 || ^15.0.0"
-  }
+    "name": "@k11r/nx-deno-deploy",
+    "version": "1.0.0",
+    "generators": "./generators.json",
+    "executors": "./executors.json",
+    "peerDependencies": {
+        "@nrwl/devkit": ">=15.0.0",
+        "@nrwl/node": ">=15.0.0",
+        "@nrwl/tao": ">=15.0.0"
+    }
 }
