@@ -1,3 +1,13 @@
+# [2.1.0](https://github.com/klaascuvelier/nx-additions/compare/v2.0.0...v2.1.0) (2023-03-04)
+
+
+### Features
+
+* **all:** bump nrwl supported packages ([f2d8921](https://github.com/klaascuvelier/nx-additions/commit/f2d892132838d1cdc249a24fc3e9632facf2dd94))
+* upgrade peerDeps ([7b7deee](https://github.com/klaascuvelier/nx-additions/commit/7b7deee00314f65643e2c055b09aac0d8394f8e7))
+
+
+
 # [2.0.0](https://github.com/klaascuvelier/nx-additions/compare/v1.7.0...v2.0.0) (2023-01-26)
 
 
