@@ -1,3 +1,12 @@
+# [2.3.0](https://github.com/klaascuvelier/nx-additions/compare/v2.2.0...v2.3.0) (2023-04-12)
+
+
+### Features
+
+* deno updates ([efe981d](https://github.com/klaascuvelier/nx-additions/commit/efe981d0aa0ac03efb74a031dc303cebd62a5d8f))
+
+
+
 # [2.2.0](https://github.com/klaascuvelier/nx-additions/compare/v2.1.0...v2.2.0) (2023-04-12)
 
 
