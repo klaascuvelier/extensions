@@ -1,10 +1,9 @@
-import { ExecutorContext } from '@nrwl/devkit';
+import { ExecutorContext, readProjectConfiguration } from '@nrwl/devkit';
 import { FsTree } from '@nrwl/tao/src/shared/tree';
-import { readProjectConfiguration } from '@nrwl/devkit';
 import { runProject } from '../../lib/deploy-ctl';
 
 export default async function serveExecutor(
-    options: any,
+    options: unknown,
     context: ExecutorContext
 ) {
     const { projectName, target } = context;

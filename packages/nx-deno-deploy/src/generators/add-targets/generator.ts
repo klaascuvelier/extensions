@@ -15,8 +15,11 @@ export default async function (
         console.log('Adding serve, test and deploy target to ' + appName);
         const projectConfiguration = readProjectConfiguration(tree, appName);
 
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const { build, ...targets } = projectConfiguration.targets;
+
         projectConfiguration.targets = {
-            ...projectConfiguration.targets,
+            ...targets,
             serve: {
                 executor: '@k11r/nx-deno-deploy:serve',
                 options: {
@@ -26,6 +29,9 @@ export default async function (
             },
             test: {
                 executor: '@k11r/nx-deno-deploy:test',
+            },
+            lint: {
+                executor: '@k11r/nx-deno-deploy:lint',
             },
             deploy: {
                 executor: '@k11r/nx-deno-deploy:deploy',

@@ -1,8 +1,8 @@
 import {
     Tree,
     formatFiles,
-    installPackagesTask,
     generateFiles,
+    installPackagesTask,
     joinPathFragments,
     readProjectConfiguration,
 } from '@nrwl/devkit';
@@ -23,7 +23,19 @@ export default async function (tree: Tree, schema: CreateDenoProjectSchema) {
     tree.listChanges()
         .filter((fileChange) => fileChange.type === 'CREATE')
         .forEach((fileChange) => {
-            tree.delete(fileChange.path);
+            if (
+                [
+                    'tsconfig',
+                    '.eslintrc',
+                    'jest',
+                    'package.json',
+                    'assets/',
+                    'main.ts',
+                    '-e2e/', // TODO add e2e config
+                ].some((str) => fileChange.path.includes(str))
+            ) {
+                tree.delete(fileChange.path);
+            }
         });
 
     generateFiles(tree, joinPathFragments(__dirname, './files'), projectRoot, {

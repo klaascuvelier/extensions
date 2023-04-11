@@ -67,6 +67,22 @@ export function testProject(sourceRoot: string) {
     }
 }
 
+export function lintProject(sourceRoot: string) {
+    if (!isDenoAvailable()) {
+        throw new Error(`Deno is not installed.`);
+    }
+
+    const command = `${denoCommand} lint`;
+
+    try {
+        console.log(command);
+        execSync(command, { cwd: sourceRoot });
+        return { success: true };
+    } catch (e) {
+        return { success: false, error: e.toString() };
+    }
+}
+
 export function runProject(
     mainFile: string,
     sourceRoot: string,

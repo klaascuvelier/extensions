@@ -4,7 +4,7 @@ import { readProjectConfiguration } from '@nrwl/devkit';
 import { testProject } from '../../lib/deploy-ctl';
 
 export default async function testExecutor(
-    options: any,
+    options: unknown,
     context: ExecutorContext
 ) {
     const { projectName } = context;
