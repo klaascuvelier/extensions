@@ -12,7 +12,7 @@ export default async function serveExecutor(
 
     const sourceRoot = projectConfiguration.sourceRoot;
     const mainFile = target.options.mainFile;
-    const flags = target.options.flags ?? [];
+    const flags = (target.options.flags ?? []).concat(['--watch']);
 
     return runProject(mainFile, sourceRoot, flags);
 }
