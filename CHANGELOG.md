@@ -1,3 +1,14 @@
+# [2.4.0](https://github.com/klaascuvelier/nx-additions/compare/v2.3.0...v2.4.0) (2023-04-13)
+
+
+### Features
+
+* add fmt defaults ([140384e](https://github.com/klaascuvelier/nx-additions/commit/140384ef145c69252c00df3992e3e91c2dec7541))
+* add watch flag for serve command ([376c1b2](https://github.com/klaascuvelier/nx-additions/commit/376c1b275d3109ee2c5ecb5695217b8b510ddbbc))
+* update default project files ([c38d478](https://github.com/klaascuvelier/nx-additions/commit/c38d478fad795a110bff7dc846837b0978fa45e4))
+
+
+
 # [2.3.0](https://github.com/klaascuvelier/nx-additions/compare/v2.2.0...v2.3.0) (2023-04-12)
 
 
