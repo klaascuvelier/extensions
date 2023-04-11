@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "strict": true
+  },
+  "imports": {
+    "server": "https://deno.land/std@0.182.0/http/server.ts"
+  }
+}
