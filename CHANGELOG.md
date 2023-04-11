@@ -1,3 +1,12 @@
+# [2.2.0](https://github.com/klaascuvelier/nx-additions/compare/v2.1.0...v2.2.0) (2023-04-12)
+
+
+### Features
+
+* add tslib dependency ([fb8b2fe](https://github.com/klaascuvelier/nx-additions/commit/fb8b2fee1e889521cfd8f3231b561aea95d79b49))
+
+
+
 # [2.1.0](https://github.com/klaascuvelier/nx-additions/compare/v2.0.0...v2.1.0) (2023-03-04)
 
 
