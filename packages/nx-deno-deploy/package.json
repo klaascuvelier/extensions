@@ -6,6 +6,7 @@
     "peerDependencies": {
         "@nrwl/devkit": ">=15.0.0",
         "@nrwl/node": ">=15.0.0",
-        "@nrwl/tao": ">=15.0.0"
+        "@nrwl/tao": ">=15.0.0",
+        "tslib": ">=2.0.0"
     }
 }
