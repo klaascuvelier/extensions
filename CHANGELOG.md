@@ -1,3 +1,12 @@
+## [2.4.1](https://github.com/klaascuvelier/nx-additions/compare/v2.4.0...v2.4.1) (2023-04-13)
+
+
+### Bug Fixes
+
+* add import-map arg to deploy ([b2c8fe7](https://github.com/klaascuvelier/nx-additions/commit/b2c8fe740cbc62266966020bbe8fd3fc1bc8b9e7))
+
+
+
 # [2.4.0](https://github.com/klaascuvelier/nx-additions/compare/v2.3.0...v2.4.0) (2023-04-13)
 
 
