@@ -40,8 +40,6 @@ export function requireDeployCtlVersion(
                 `Deno deployctl ${minimumVersion} is not installed.`
             );
         }
-
-        console.log(version);
     } catch (e) {
         const message =
             minimumVersion !== '0.0.0'
