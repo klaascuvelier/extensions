@@ -71,6 +71,7 @@ export function deployProject(
 
     const options = [
         `--project=${denoProject}`,
+        `--import-map=deno.json`,
         isProd ? '--prod' : null,
         token.length > 0 ? `--token=${token}` : '',
     ]
