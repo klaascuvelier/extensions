@@ -1,3 +1,12 @@
+## [2.4.2](https://github.com/klaascuvelier/nx-additions/compare/v2.4.1...v2.4.2) (2023-04-14)
+
+
+### Bug Fixes
+
+* move deno.json file to project root, not source root ([dfd4892](https://github.com/klaascuvelier/nx-additions/commit/dfd4892300df0abc2fd3d75cebce7e7ba8812328))
+
+
+
 ## [2.4.1](https://github.com/klaascuvelier/nx-additions/compare/v2.4.0...v2.4.1) (2023-04-13)
 
 
