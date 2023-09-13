@@ -1,14 +1,14 @@
 import {
-    Tree,
     formatFiles,
-    installPackagesTask,
     generateFiles,
+    installPackagesTask,
     joinPathFragments,
-    readProjectConfiguration,
     names,
+    readProjectConfiguration,
+    Tree,
     updateProjectConfiguration,
-} from '@nrwl/devkit';
-import { applicationGenerator } from '@nrwl/node';
+} from '@nx/devkit';
+import { applicationGenerator } from '@nx/node';
 import { CloudflareWorkerProjectSchema } from './schema';
 
 export default async function projectGenerator(

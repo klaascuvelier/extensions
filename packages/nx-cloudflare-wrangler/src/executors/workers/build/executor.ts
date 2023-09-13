@@ -1,10 +1,6 @@
-import {
-    ExecutorContext,
-    joinPathFragments,
-    workspaceRoot,
-} from '@nrwl/devkit';
-import { WorkerBuildExecutorSchema } from './schema';
+import { ExecutorContext, joinPathFragments, workspaceRoot } from '@nx/devkit';
 import { execSync } from 'child_process';
+import { WorkerBuildExecutorSchema } from './schema';
 
 export default async function buildExecutor(
     options: WorkerBuildExecutorSchema,

@@ -3,12 +3,12 @@ import {
     joinPathFragments,
     readProjectConfiguration,
     workspaceRoot,
-} from '@nrwl/devkit';
-import { WorkerServeExecutorSchema } from './workers/serve/schema';
-import { WorkerDeployExecutorSchema } from './workers/deploy/schema';
-import { FsTree } from '@nrwl/tao/src/shared/tree';
+} from '@nx/devkit';
+import { FsTree } from '@nx/tao/src/shared/tree';
 import { execSync } from 'child_process';
 import { PagesDeployExecutorSchema } from './pages/deploy/schema';
+import { WorkerDeployExecutorSchema } from './workers/deploy/schema';
+import { WorkerServeExecutorSchema } from './workers/serve/schema';
 
 export function runWranglerCommandForProject(
     options:

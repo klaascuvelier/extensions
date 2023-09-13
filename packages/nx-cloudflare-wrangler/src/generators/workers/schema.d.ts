@@ -1,4 +1,4 @@
-import { Schema } from '@nrwl/node/src/generators/application/schema';
+import { Schema } from '@nx/node/src/generators/application/schema';
 
 export interface CloudflareWorkerProjectSchema extends Schema {
     zone_id?: string;

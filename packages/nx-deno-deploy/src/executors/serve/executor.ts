@@ -1,5 +1,5 @@
-import { ExecutorContext, readProjectConfiguration } from '@nrwl/devkit';
-import { FsTree } from '@nrwl/tao/src/shared/tree';
+import { ExecutorContext, readProjectConfiguration } from '@nx/devkit';
+import { FsTree } from '@nx/tao/src/shared/tree';
 import { runProject } from '../../lib/deploy-ctl';
 
 export default async function serveExecutor(

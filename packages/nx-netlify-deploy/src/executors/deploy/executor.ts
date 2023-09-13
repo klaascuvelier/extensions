@@ -1,6 +1,6 @@
-import { ExecutorContext } from '@nrwl/devkit';
-import { DeployExecutorSchema } from './schema';
+import { ExecutorContext } from '@nx/devkit';
 import { execSync } from 'child_process';
+import { DeployExecutorSchema } from './schema';
 
 export default async function deployExecutor(
     options: DeployExecutorSchema,

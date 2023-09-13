@@ -1,0 +1,55 @@
+{
+    "name": "nx-cloudflare-wrangler",
+    "$schema": "../../node_modules/nx/schemas/project-schema.json",
+    "sourceRoot": "packages/nx-cloudflare-wrangler/src",
+    "projectType": "library",
+    "targets": {
+        "lint": {
+            "executor": "@nx/linter:eslint",
+            "outputs": ["{options.outputFile}"],
+            "options": {
+                "lintFilePatterns": ["packages/nx-cloudflare-wrangler/**/*.ts"]
+            }
+        },
+        "test": {
+            "executor": "@nx/jest:jest",
+            "outputs": [
+                "{workspaceRoot}/coverage/packages/nx-cloudflare-wrangler"
+            ],
+            "options": {
+                "jestConfig": "packages/nx-cloudflare-wrangler/jest.config.ts",
+                "passWithNoTests": true
+            }
+        },
+        "build": {
+            "executor": "@nx/js:tsc",
+            "outputs": ["{options.outputPath}"],
+            "options": {
+                "outputPath": "dist/packages/nx-cloudflare-wrangler",
+                "tsConfig": "packages/nx-cloudflare-wrangler/tsconfig.lib.json",
+                "packageJson": "packages/nx-cloudflare-wrangler/package.json",
+                "main": "packages/nx-cloudflare-wrangler/src/index.ts",
+                "assets": [
+                    "packages/nx-cloudflare-wrangler/*.md",
+                    {
+                        "input": "./packages/nx-cloudflare-wrangler/src",
+                        "glob": "**/!(*.ts)",
+                        "output": "./src"
+                    },
+                    {
+                        "input": "./packages/nx-cloudflare-wrangler/src",
+                        "glob": "**/*.d.ts",
+                        "output": "./src"
+                    },
+                    {
+                        "input": "./packages/nx-cloudflare-wrangler",
+                        "glob": "{generators,executors}.json",
+                        "output": "."
+                    }
+                ],
+                "updateBuildableProjectDepsInPackageJson": true
+            }
+        }
+    },
+    "tags": []
+}

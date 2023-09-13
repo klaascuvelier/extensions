@@ -1,12 +1,12 @@
 import {
-    Tree,
     formatFiles,
     generateFiles,
     installPackagesTask,
     joinPathFragments,
     readProjectConfiguration,
-} from '@nrwl/devkit';
-import { applicationGenerator } from '@nrwl/node';
+    Tree,
+} from '@nx/devkit';
+import { applicationGenerator } from '@nx/node';
 import denoDeployGenerator from '../add-targets/generator';
 import { CreateDenoProjectSchema } from './schema';
 

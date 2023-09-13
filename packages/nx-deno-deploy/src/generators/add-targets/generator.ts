@@ -2,7 +2,7 @@ import {
     readProjectConfiguration,
     Tree,
     updateProjectConfiguration,
-} from '@nrwl/devkit';
+} from '@nx/devkit';
 import { AddDeployTargetGeneratorSchema } from './schema';
 
 export default async function (

@@ -1,7 +1,7 @@
+import { ExecutorContext, readProjectConfiguration } from '@nx/devkit';
+import { FsTree } from '@nx/tao/src/shared/tree';
 import { execSync } from 'child_process';
 import { ServeExecutorSchema } from './serve/schema';
-import { ExecutorContext, readProjectConfiguration } from '@nrwl/devkit';
-import { FsTree } from '@nrwl/tao/src/shared/tree';
 
 export type sstCommand = 'start' | 'test' | 'deploy' | 'remove';
 export const SST_OPTION_KEYS = ['profile', 'stage', 'region', 'role-arn'];

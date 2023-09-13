@@ -1,22 +1,22 @@
 {
-  "$schema": "../../../../../node_modules/@nrwl/node/src/generators/application/schema.json",
-  "cli": "nx",
-  "$id": "DenoProject",
-  "type": "object",
-  "properties": {
-    "name": {
-      "type": "string",
-      "description": "Identifier for the Deno project",
-      "$default": {
-        "$source": "argv",
-        "index": 0
-      },
-      "x-prompt": "What is the name of the app?"
+    "$schema": "../../../../../node_modules/@nx/node/src/generators/application/schema.json",
+    "cli": "nx",
+    "$id": "DenoProject",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string",
+            "description": "Identifier for the Deno project",
+            "$default": {
+                "$source": "argv",
+                "index": 0
+            },
+            "x-prompt": "What is the name of the app?"
+        },
+        "denoProject": {
+            "type": "string",
+            "description": "Deno project name, if the name is different from the project name"
+        }
     },
-    "denoProject": {
-      "type": "string",
-      "description": "Deno project name, if the name is different from the project name"
-    }
-  },
-  "required": ["name"]
+    "required": ["name"]
 }
