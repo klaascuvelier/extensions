@@ -1,6 +1,23 @@
 {
     "name": "@k11r/nx-sst",
     "version": "0.0.1",
+    "description": "Nx Plugin for SST",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/klaascuvelier/nx-additions.git",
+        "directory": "packages/nx-sst"
+    },
+    "author": "Klaas Cuvelier",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/klaascuvelier/nx-additions/issues"
+    },
+    "keywords": [
+        "nx",
+        "nrwl",
+        "plugin",
+        "sst"
+    ],
     "generators": "./generators.json",
     "executors": "./executors.json",
     "peerDependencies": {

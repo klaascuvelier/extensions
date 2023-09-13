@@ -1,6 +1,24 @@
 {
     "name": "@k11r/nx-deno-deploy",
     "version": "1.0.0",
+    "description": "Nx Plugin for Deno Deploy",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/klaascuvelier/nx-additions.git",
+        "directory": "packages/nx-deno-deploy"
+    },
+    "author": "Klaas Cuvelier",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/klaascuvelier/nx-additions/issues"
+    },
+    "keywords": [
+        "nx",
+        "nrwl",
+        "plugin",
+        "deno",
+        "deploy"
+    ],
     "generators": "./generators.json",
     "executors": "./executors.json",
     "peerDependencies": {

@@ -1,6 +1,23 @@
 {
     "name": "@k11r/nx-netlify-deploy",
     "version": "0.0.3",
+    "description": "Nx Plugin for Netlify",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/klaascuvelier/nx-additions.git",
+        "directory": "packages/nx-netlify-deploy"
+    },
+    "author": "Klaas Cuvelier",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/klaascuvelier/nx-additions/issues"
+    },
+    "keywords": [
+        "nx",
+        "nrwl",
+        "plugin",
+        "netlify"
+    ],
     "generators": "./generators.json",
     "executors": "./executors.json",
     "peerDependencies": {
