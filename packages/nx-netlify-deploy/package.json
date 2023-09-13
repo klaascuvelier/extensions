@@ -22,7 +22,6 @@
     "executors": "./executors.json",
     "peerDependencies": {
         "@nx/devkit": ">=16.0.0",
-        "@nx/tao": ">=16.0.0",
         "netlify-cli": "^8.0.0"
     }
 }

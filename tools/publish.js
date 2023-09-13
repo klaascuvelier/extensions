@@ -1,10 +1,10 @@
 const { execSync } = require('child_process');
 const { cwd } = require('process');
 const { getProjects } = require('@nrwl/devkit');
-const { FsTree } = require('@nrwl/tao/src/shared/tree');
 const semanticRelease = require('semantic-release');
 const { readFileSync, writeFileSync, existsSync } = require('fs');
 const { git } = require('commitizen/dist/cli/strategies');
+const { FsTree } = require('nx/src/generators/tree');
 
 (async function publish() {
     buildProjects();
@@ -71,7 +71,7 @@ function buildProjects() {
 }
 
 function getPackages() {
-    const tree = new FsTree(cwd());
+    const tree = new FsTree(cwd(), false);
     const projects = getProjects(tree);
 
     return Array.from(projects.entries()).map((entry) => {
