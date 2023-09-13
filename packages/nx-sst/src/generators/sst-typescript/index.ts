@@ -1,13 +1,13 @@
 import {
-    Tree,
     formatFiles,
-    installPackagesTask,
     generateFiles,
+    installPackagesTask,
     joinPathFragments,
-    readProjectConfiguration,
     names,
+    readProjectConfiguration,
+    Tree,
     updateProjectConfiguration,
-} from '@nrwl/devkit';
+} from '@nx/devkit';
 import { applicationGenerator } from '@nx/node';
 import { CreateSstProjectSchema } from './schema';
 

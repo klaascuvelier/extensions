@@ -1,9 +1,9 @@
 import {
-    Tree,
     installPackagesTask,
     readProjectConfiguration,
+    Tree,
     updateProjectConfiguration,
-} from '@nrwl/devkit';
+} from '@nx/devkit';
 import { CloudflarePagesProjectSchema } from './schema';
 
 export default async function projectGenerator(

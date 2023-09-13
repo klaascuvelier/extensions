@@ -1,6 +1,6 @@
-import { ExecutorContext } from '@nrwl/devkit';
-import { TextExecutorSchema } from './schema';
+import { ExecutorContext } from '@nx/devkit';
 import { runSstCommandForProject } from '../sst';
+import { TextExecutorSchema } from './schema';
 
 export default async function testExecutor(
     options: TextExecutorSchema,

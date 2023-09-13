@@ -4,8 +4,9 @@
     "generators": "./generators.json",
     "executors": "./executors.json",
     "peerDependencies": {
-        "@nrwl/devkit": ">=15.0.0",
-        "@nrwl/tao": ">=15.0.0",
+        "@nx/devkit": ">=16.0.0",
+        "@nx/tao": ">=16.0.0",
+        "@nx/node": ">=16.0.0",
         "@serverless-stack/core": "~1.18.4",
         "@serverless-stack/cli": "~1.18.4",
         "@serverless-stack/resources": "~1.18.4",
@@ -13,7 +14,6 @@
         "@types/aws-lambda": "^8.10.70",
         "@types/node": "<15.0.0",
         "aws-cdk-lib": "2.15.0",
-        "typescript": "4.4.4",
-        "@nx/node": ">=15.0.0"
+        "typescript": "4.4.4"
     }
 }

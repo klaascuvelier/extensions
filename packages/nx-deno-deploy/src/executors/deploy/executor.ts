@@ -1,8 +1,7 @@
-import { ExecutorContext } from '@nrwl/devkit';
-import { DeployExecutorSchema } from './schema';
+import { ExecutorContext, readProjectConfiguration } from '@nx/devkit';
+import { FsTree } from '@nx/tao/src/shared/tree';
 import { deployProject } from '../../lib/deploy-ctl';
-import { FsTree } from '@nrwl/tao/src/shared/tree';
-import { readProjectConfiguration } from '@nrwl/devkit';
+import { DeployExecutorSchema } from './schema';
 
 export default async function deployExecutor(
     options: DeployExecutorSchema,

@@ -1,8 +1,8 @@
-import { ExecutorContext, joinPathFragments } from '@nrwl/devkit';
-import { PagesDeployExecutorSchema } from './schema';
-import { runWranglerCommandForProject } from '../../wrangler';
+import { ExecutorContext, joinPathFragments } from '@nx/devkit';
 import { execSync } from 'child_process';
 import { resolve } from 'path';
+import { runWranglerCommandForProject } from '../../wrangler';
+import { PagesDeployExecutorSchema } from './schema';
 
 export default async function deployExecutor(
     options: PagesDeployExecutorSchema,
