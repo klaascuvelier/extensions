@@ -1,3 +1,12 @@
+# [2.6.0](https://github.com/klaascuvelier/nx-additions/compare/v2.5.0...v2.6.0) (2023-09-13)
+
+
+### Features
+
+* 🎸 remove nrwl/tao and nx/tao references in codebase ([dcfc500](https://github.com/klaascuvelier/nx-additions/commit/dcfc5007c9451a81f2afb2c8aeadb69c02362add))
+
+
+
 # [2.5.0](https://github.com/klaascuvelier/nx-additions/compare/v2.4.2...v2.5.0) (2023-09-13)
 
 
