@@ -1,3 +1,17 @@
+# [2.5.0](https://github.com/klaascuvelier/nx-additions/compare/v2.4.2...v2.5.0) (2023-09-13)
+
+
+### Bug Fixes
+
+* 🐛 various fixes for rsync deployed ([ad07eda](https://github.com/klaascuvelier/nx-additions/commit/ad07eda38b0e3efa5f4b07b50885638fa6ad2ccc))
+
+
+### Features
+
+* 🎸 add correct detailed info to package.json ([859b443](https://github.com/klaascuvelier/nx-additions/commit/859b443f47ef49a5eea46544e6e9a4b84cd59739))
+
+
+
 ## [2.4.2](https://github.com/klaascuvelier/nx-additions/compare/v2.4.1...v2.4.2) (2023-04-14)
 
 
