@@ -5,9 +5,9 @@
     "executors": "./executors.json",
     "peerDependencies": {
         "@nrwl/devkit": ">=15.0.0",
-        "@nrwl/node": ">=15.0.0",
         "@nrwl/tao": ">=15.0.0",
         "wrangler": "^2.0.0",
-        "esbuild": "^0.14.42"
+        "esbuild": "^0.14.42",
+        "@nx/node": ">=15.0.0"
     }
 }

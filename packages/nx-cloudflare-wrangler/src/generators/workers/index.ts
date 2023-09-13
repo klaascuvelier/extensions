@@ -8,7 +8,7 @@ import {
     names,
     updateProjectConfiguration,
 } from '@nrwl/devkit';
-import { applicationGenerator } from '@nrwl/node';
+import { applicationGenerator } from '@nx/node';
 import { CloudflareWorkerProjectSchema } from './schema';
 
 export default async function projectGenerator(

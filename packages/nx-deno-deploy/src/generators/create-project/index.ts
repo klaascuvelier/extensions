@@ -6,7 +6,7 @@ import {
     joinPathFragments,
     readProjectConfiguration,
 } from '@nrwl/devkit';
-import { applicationGenerator } from '@nrwl/node';
+import { applicationGenerator } from '@nx/node';
 import denoDeployGenerator from '../add-targets/generator';
 import { CreateDenoProjectSchema } from './schema';
 

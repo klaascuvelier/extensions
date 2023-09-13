@@ -1,7 +1,7 @@
-const { createBuilder } = require('@angular-devkit/architect');
-const { execSync, spawn } = require('child_process');
-const { projects: angularProjects } = require('../../../angular.json');
-const { properties: schemaProperties } = require('./schema.json');
+import { createBuilder } from '@angular-devkit/architect';
+import { execSync, spawn } from 'child_process';
+import { projects as angularProjects } from '../../../angular.json';
+import { properties as schemaProperties } from './schema.json';
 
 const NxBuilder = createBuilder(async (builderConfig, context) => {
     const { project } = context.target;
@@ -124,8 +124,8 @@ function extractConfig(config) {
         postDeploy,
     };
 
-    function withFallback(text, fallback) {
-        return text && text.length > 0 ? text : fallback;
+    function withFallback(text: string, fallback: string) {
+        return text?.length > 0 ? text : fallback;
     }
 
     function getGitBranch() {
@@ -133,15 +133,17 @@ function extractConfig(config) {
             return execSync(`git rev-parse --abbrev-ref HEAD`)
                 .toString()
                 .trim();
-        } catch (error) {}
-        return null;
+        } catch (error) {
+            return null;
+        }
     }
 
     function getCurrentSha() {
         try {
             return execSync(`git rev-parse --short HEAD`).toString().trim();
-        } catch (error) {}
-        return null;
+        } catch (error) {
+            return null;
+        }
     }
 
     function stripEndSlash(text) {
@@ -180,8 +182,8 @@ function extractConfig(config) {
 function normalizeText(text) {
     return text
         .toLowerCase()
-        .replace(/[^a-z0-9\-]/g, '-')
-        .replace(/[\-]{1,}/, '-');
+        .replace(/[^a-z0-9-]/g, '-')
+        .replace(/-+/, '-');
 }
 
 function deploy(

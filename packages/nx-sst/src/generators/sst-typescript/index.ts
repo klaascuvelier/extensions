@@ -8,7 +8,7 @@ import {
     names,
     updateProjectConfiguration,
 } from '@nrwl/devkit';
-import { applicationGenerator } from '@nrwl/node';
+import { applicationGenerator } from '@nx/node';
 import { CreateSstProjectSchema } from './schema';
 
 const SST_OPTION_MAP = {

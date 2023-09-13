@@ -5,7 +5,7 @@ A set of very poorly documented and maintained plugins for NX workspaces.
 ## Available packages
 
 | Package                                                      | Description                                                         |
-|--------------------------------------------------------------|---------------------------------------------------------------------|
+| ------------------------------------------------------------ | ------------------------------------------------------------------- |
 | [nx-cloudflare-wrangler](./packages/nx-cloudflare-wrangler/) | Generator and executors for Cloudflare wrangler (workers and pages) |
 | [nx-deno-deploy](./packages/nx-deno-deploy/)                 | Deploy projects to Deno deploy                                      |
 | [nx-netlify-deploy](./packages/nx-netlify-deploy/)           | Deployer and generator for Netlify pages                            |
@@ -15,4 +15,5 @@ A set of very poorly documented and maintained plugins for NX workspaces.
 ## Contribution
 
 ### Generate a new package
-Run `nx g @nrwl/node:lib my-lib --publishable --importPath=@k11r/my-lib` to generate a library.
+
+Run `nx g @nx/node:lib my-lib --publishable --importPath=@k11r/my-lib` to generate a library.

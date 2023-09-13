@@ -5,10 +5,11 @@
     },
     "tasksRunnerOptions": {
         "default": {
-            "runner": "nx/tasks-runners/default",
+            "runner": "nx-cloud",
             "options": {
                 "cacheableOperations": ["build", "lint", "test", "e2e"],
-                "parallel": 1
+                "parallel": 1,
+                "accessToken": "NmZlZjJlYTktNmU4Yi00NGJiLTlmYzUtMmE3YTQ4NjE3Y2RlfHJlYWQtd3JpdGU="
             }
         }
     },
@@ -41,7 +42,8 @@
             "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
             "!{projectRoot}/tsconfig.spec.json",
             "!{projectRoot}/jest.config.[jt]s",
-            "!{projectRoot}/.eslintrc.json"
+            "!{projectRoot}/.eslintrc.json",
+            "!{projectRoot}/src/test-setup.[jt]s"
         ]
     }
 }
