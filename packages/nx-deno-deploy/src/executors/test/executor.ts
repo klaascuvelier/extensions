@@ -1,5 +1,5 @@
 import { ExecutorContext, readProjectConfiguration } from '@nx/devkit';
-import { FsTree } from '@nx/tao/src/shared/tree';
+import { FsTree } from 'nx/src/generators/tree';
 import { testProject } from '../../lib/deploy-ctl';
 
 export default async function testExecutor(

@@ -4,8 +4,8 @@ import {
     readProjectConfiguration,
     workspaceRoot,
 } from '@nx/devkit';
-import { FsTree } from '@nx/tao/src/shared/tree';
 import { execSync } from 'child_process';
+import { FsTree } from 'nx/src/generators/tree';
 import { PagesDeployExecutorSchema } from './pages/deploy/schema';
 import { WorkerDeployExecutorSchema } from './workers/deploy/schema';
 import { WorkerServeExecutorSchema } from './workers/serve/schema';

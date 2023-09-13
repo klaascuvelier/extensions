@@ -1,6 +1,7 @@
 import { ExecutorContext, readProjectConfiguration } from '@nx/devkit';
-import { FsTree } from '@nx/tao/src/shared/tree';
+
 import { execSync } from 'child_process';
+import { FsTree } from 'nx/src/generators/tree';
 import { ServeExecutorSchema } from './serve/schema';
 
 export type sstCommand = 'start' | 'test' | 'deploy' | 'remove';

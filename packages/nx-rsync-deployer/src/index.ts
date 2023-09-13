@@ -1,10 +1,27 @@
-import { createBuilder } from '@angular-devkit/architect';
+import { ExecutorContext, readProjectConfiguration } from '@nx/devkit';
 import { execSync, spawn } from 'child_process';
-import { projects as angularProjects } from '../../../angular.json';
-import { properties as schemaProperties } from './schema.json';
+import { FsTree } from 'nx/src/generators/tree';
 
-const NxBuilder = createBuilder(async (builderConfig, context) => {
-    const { project } = context.target;
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { properties: schemaProperties } = require('./schema.json');
+
+export type RsyncDeployExecutorSchema = {
+    noBuild: boolean;
+    outputPath: string;
+    deployIdentifier: string;
+    previewUrl: string;
+    rsyncTarget: string;
+    rsyncUser: string;
+    rsyncHost: string;
+    preDeploy: string[];
+    postDeploy: string[];
+};
+
+export default async function runExecutor(
+    options: RsyncDeployExecutorSchema,
+    context: ExecutorContext
+) {
+    const projectName = context.projectName;
     const {
         deployIdentifier,
         previewUrl,
@@ -13,16 +30,17 @@ const NxBuilder = createBuilder(async (builderConfig, context) => {
         rsyncHost,
         preDeploy,
         postDeploy,
-    } = extractConfig(builderConfig);
+    } = extractConfig(options);
 
-    const projectInfo = angularProjects[project];
-    const buildOutputPath = projectInfo.architect.build.options.outputPath;
+    const tree = new FsTree(process.cwd(), false);
+    const projectInfo = readProjectConfiguration(tree, projectName);
+    const buildOutputPath = projectInfo.targets['build'].options.outputPath;
     const deployUrl =
         previewUrl.replace('$deployIdentifier', deployIdentifier) +
         (previewUrl.endsWith('/') ? '' : '/');
 
-    if (builderConfig.noBuild) {
-        context.logger.info(`📦 Skipping build`);
+    if (options.noBuild) {
+        console.info(`📦 Skipping build`);
     } else {
         if (!context.target) {
             throw new Error('Cannot build the application without a target');
@@ -34,36 +52,37 @@ const NxBuilder = createBuilder(async (builderConfig, context) => {
             );
         }
 
-        const configuration = builderConfig.configuration || 'production';
+        const configuration = 'production';
         const overrides = {
             baseHref: deployUrl,
             deployUrl: deployUrl,
         };
 
-        context.logger.info(
-            `📦 Building "${context.target.project}". Configuration: "${configuration}". ${deployIdentifier}`
+        console.info(
+            `📦 Building "${projectName}". Configuration: "${configuration}". ${deployIdentifier}`
         );
 
-        const build = await context.scheduleTarget(
-            {
-                target: 'build',
-                project: context.target.project || '',
-                configuration,
-            },
-            overrides
-        );
+        console.warn(`Building not implemented`);
 
-        const buildResult = await build.result;
-
-        if (buildResult.success !== true) {
-            context.logger.error(`❌ Application build failed`);
-            return {
-                error: `❌ Application build failed`,
-                success: false,
-            };
-        }
-
-        context.logger.info(`✔ Build Completed`);
+        // const build = await executeBrowserBuilder({} as unknown as BrowserBuilderSchema, context);
+        //
+        // const build = await context.scheduleTarget(
+        //     {
+        //         target: 'build',
+        //         project: context.target.project || '',
+        //         configuration,
+        //     },
+        //     overrides
+        // );
+        //
+        // if (buildResult.success !== true) {
+        //     console.error(`❌ Application build failed`);
+        //     return {
+        //         error: `❌ Application build failed`,
+        //         success: false,
+        //     };
+        // }
+        // context.logger.info(`✔ Build Completed`);
     }
 
     return deploy(
@@ -77,11 +96,14 @@ const NxBuilder = createBuilder(async (builderConfig, context) => {
         postDeploy
     )
         .then(() => {
-            context.logger.info(`✔ Deploy Completed: ${deployUrl}`);
+            console.info(`✔ Deploy Completed: ${deployUrl}`);
             return { success: true };
         })
-        .catch((error) => ({ success: false }));
-});
+        .catch((error) => {
+            console.error(error);
+            return { success: false };
+        });
+}
 
 function extractConfig(config) {
     const deployIdentifier = normalizeText(
@@ -107,10 +129,11 @@ function extractConfig(config) {
         schemaProperties.rsyncHost.default
     );
     const previewUrl = withFallback(config.previewUrl, null);
-    const preDeploy = withFallback(config.preDeploy, [])
+    const preDeploy = (config.preDeploy ?? [])
         .map(addPrePostDeployReplacements)
         .join(`,`);
-    const postDeploy = withFallback(config.postDeploy, [])
+
+    const postDeploy = (config.postDeploy ?? [])
         .map(addPrePostDeployReplacements)
         .join(`,`);
 
@@ -235,5 +258,3 @@ function deploy(
         });
     });
 }
-
-exports.default = NxBuilder;
