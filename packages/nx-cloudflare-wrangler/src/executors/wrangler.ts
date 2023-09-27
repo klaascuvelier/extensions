@@ -25,7 +25,7 @@ export function runWranglerCommandForProject(
 
     const wranglerOptions = [];
 
-    if (command === 'pages publish') {
+    if (command === 'pages deploy') {
         wranglerOptions.push((options as PagesDeployExecutorSchema).dist);
         wranglerOptions.push(
             '--project-name="' +
@@ -52,7 +52,7 @@ export function runWranglerCommandForProject(
         );
     } else if (command === 'pages dev') {
         wranglerOptions.push((options as PagesDeployExecutorSchema).dist);
-    } else if (command === 'publish') {
+    } else if (command === 'deploy') {
         wranglerOptions.push(
             joinPathFragments(
                 workspaceRoot,

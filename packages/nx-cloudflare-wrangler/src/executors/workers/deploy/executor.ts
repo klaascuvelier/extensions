@@ -6,5 +6,5 @@ export default async function deployExecutor(
     options: WorkerDeployExecutorSchema,
     context: ExecutorContext
 ) {
-    return runWranglerCommandForProject(options, context, 'publish');
+    return runWranglerCommandForProject(options, context, 'deploy');
 }

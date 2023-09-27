@@ -34,6 +34,6 @@ export default async function deployExecutor(
     return runWranglerCommandForProject(
         deployOptions,
         context,
-        'pages publish'
+        'pages deploy'
     );
 }
