@@ -1,3 +1,12 @@
+## [2.6.1](https://github.com/klaascuvelier/nx-additions/compare/v2.6.0...v2.6.1) (2023-09-28)
+
+
+### Bug Fixes
+
+* rsync deployer fixes ([43e398f](https://github.com/klaascuvelier/nx-additions/commit/43e398fb24bfd1528ba47c5ee9f59e2764081fb4))
+
+
+
 # [2.6.0](https://github.com/klaascuvelier/nx-additions/compare/v2.5.0...v2.6.0) (2023-09-13)
 
 
