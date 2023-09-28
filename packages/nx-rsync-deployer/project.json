@@ -29,7 +29,21 @@
                 "main": "packages/nx-rsync-deployer/src/index.ts",
                 "assets": [
                     "packages/nx-rsync-deployer/*.md",
-                    "packages/nx-rsync-deployer/builders.json"
+                    {
+                        "input": "./packages/nx-rsync-deployer/src",
+                        "glob": "**/!(*.ts)",
+                        "output": "./src"
+                    },
+                    {
+                        "input": "./packages/nx-rsync-deployer/src",
+                        "glob": "**/*.d.ts",
+                        "output": "./src"
+                    },
+                    {
+                        "input": "./packages/nx-rsync-deployer",
+                        "glob": "{generators,executors}.json",
+                        "output": "."
+                    }
                 ],
                 "updateBuildableProjectDepsInPackageJson": true
             }

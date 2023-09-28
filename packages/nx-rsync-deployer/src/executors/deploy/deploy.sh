@@ -29,7 +29,7 @@ done
 echo "☁ Syncing data"
 ssh -p22 ${host} "rm -rf ${target}/*" # remove possible old data
 ssh -p22 ${host} "mkdir -p ${target}"
-rsync -a -q ${source} ${host}:${target}
+rsync -avzq ${source} ${host}:${target}
 
 for command in "${postDeploy[@]}"
 do

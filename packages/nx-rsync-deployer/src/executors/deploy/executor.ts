@@ -1,5 +1,7 @@
 import { ExecutorContext, readProjectConfiguration } from '@nx/devkit';
 import { execSync, spawn } from 'child_process';
+import { readFile, stat, writeFile } from 'fs/promises';
+import { join } from 'node:path';
 import { FsTree } from 'nx/src/generators/tree';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -39,51 +41,26 @@ export default async function runExecutor(
         previewUrl.replace('$deployIdentifier', deployIdentifier) +
         (previewUrl.endsWith('/') ? '' : '/');
 
-    if (options.noBuild) {
-        console.info(`📦 Skipping build`);
-    } else {
-        if (!context.target) {
-            throw new Error('Cannot build the application without a target');
-        }
+    console.info(`📦 Skipping build`);
 
-        if (!previewUrl) {
-            throw new Error(
-                'Cannot deploy the application without a previewUrl'
-            );
-        }
-
-        const configuration = 'production';
-        const overrides = {
-            baseHref: deployUrl,
-            deployUrl: deployUrl,
-        };
-
-        console.info(
-            `📦 Building "${projectName}". Configuration: "${configuration}". ${deployIdentifier}`
+    try {
+        await stat(buildOutputPath);
+    } catch (e) {
+        console.error(
+            `🧨 Build output path does not exist: ${buildOutputPath}`
         );
-
-        console.warn(`Building not implemented`);
-
-        // const build = await executeBrowserBuilder({} as unknown as BrowserBuilderSchema, context);
-        //
-        // const build = await context.scheduleTarget(
-        //     {
-        //         target: 'build',
-        //         project: context.target.project || '',
-        //         configuration,
-        //     },
-        //     overrides
-        // );
-        //
-        // if (buildResult.success !== true) {
-        //     console.error(`❌ Application build failed`);
-        //     return {
-        //         error: `❌ Application build failed`,
-        //         success: false,
-        //     };
-        // }
-        // context.logger.info(`✔ Build Completed`);
+        process.exit(1);
     }
+
+    const indexHtml = join(buildOutputPath, 'index.html');
+    const indexContent = await readFile(indexHtml, 'utf-8');
+    await writeFile(
+        indexHtml,
+        indexContent.replace(
+            /<base href="[^"]*">/,
+            `<base href="${deployUrl}">`
+        )
+    );
 
     return deploy(
         context,
@@ -223,7 +200,7 @@ function deploy(
     const args = [
         './deploy.sh',
         privateKey,
-        `../../../${source}/*`,
+        `../../../../../../${source}/`,
         `${target}/${deployIdentifier}`,
         `${user}@${host}`,
         preDeploy,
@@ -234,7 +211,7 @@ function deploy(
         cwd: __dirname,
     };
 
-    context.logger.info(`🚀 deploying application`);
+    console.info(`🚀 deploying application`);
 
     return new Promise((resolve, reject) => {
         const childProcess = spawn('sh', args, spawnOptions);
@@ -246,7 +223,7 @@ function deploy(
 
         childProcess.on('close', (code) => {
             if (code !== 0) {
-                context.logger.error(`🧨 deploying application failed`);
+                console.error(`🧨 deploying application failed`);
 
                 console.log(stdout, code);
                 reject(stdout);

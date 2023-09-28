@@ -22,5 +22,5 @@
     "peerDependencies": {
         "@angular-devkit/build-angular": "^16.2.1"
     },
-    "builders": "builders.json"
+    "executors": "./executors.json"
 }
