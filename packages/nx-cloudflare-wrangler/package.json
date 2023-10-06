@@ -24,7 +24,7 @@
     "peerDependencies": {
         "@nx/devkit": ">=16.0.0",
         "@nx/node": ">=16.0.0",
-        "esbuild": "^0.14.42",
-        "wrangler": "^2.0.0"
+        "esbuild": "~0.19.0",
+        "wrangler": "^3.0.0"
     }
 }
