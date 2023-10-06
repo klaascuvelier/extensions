@@ -16,7 +16,7 @@ export function runWranglerCommandForProject(
         | WorkerDeployExecutorSchema
         | PagesDeployExecutorSchema,
     context: ExecutorContext,
-    command: 'dev' | 'publish' | 'pages publish' | 'pages dev'
+    command: 'dev' | 'publish' | 'pages deploy' | 'pages dev'
 ) {
     const { projectName, target } = context;
 
