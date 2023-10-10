@@ -16,10 +16,13 @@ const { FsTree } = require('nx/src/generators/tree');
     }
 
     const otp = getOtp();
-
+    console.log('✅ OTP');
     execSync(`npm version ${version}`);
+    console.log('✅ NPMV');
     updateChangelog(notes);
+    console.log('✅ CHANGELOG');
     pushGitTag(gitTag);
+    console.log('✅ GITTAG');
 
     const packages = getPackages();
 
