@@ -17,6 +17,7 @@ const { FsTree } = require('nx/src/generators/tree');
     const version = '2.7.0-beta.0';
     // const otp = getOtp();
     // console.log('✅ OTP');
+    console.log('start');
     execSync(`npm version ${version}`, { stdio: 'inherit' });
     console.log('✅ NPMV');
     // updateChangelog(notes);
