@@ -9,20 +9,20 @@ const { FsTree } = require('nx/src/generators/tree');
 (async function publish() {
     buildProjects();
 
-    const { version, notes, gitTag } = await getVersion();
-    if (!version) {
-        console.log('no release');
-        return;
-    }
-
-    const otp = getOtp();
-    console.log('✅ OTP');
-    execSync(`npm version ${version}`);
+    // const { version, notes, gitTag } = await getVersion();
+    // if (!version) {
+    //     console.log('no release');
+    //     return;
+    // }
+    const version = '2.7.0-beta.0';
+    // const otp = getOtp();
+    // console.log('✅ OTP');
+    execSync(`npm version ${version}`, { stdio: 'inherit' });
     console.log('✅ NPMV');
-    updateChangelog(notes);
-    console.log('✅ CHANGELOG');
-    pushGitTag(gitTag);
-    console.log('✅ GITTAG');
+    // updateChangelog(notes);
+    //  console.log('✅ CHANGELOG');
+    //pushGitTag(gitTag);
+    //  console.log('✅ GITTAG');
 
     const packages = getPackages();
 
