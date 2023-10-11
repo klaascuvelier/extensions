@@ -119,7 +119,7 @@ async function setNpmVersion(packageJsonPath, version) {
         const content = await readFile(packageJsonPath, 'utf8');
         const data = JSON.parse(content);
         data.version = version;
-        await writeFile(packageJsonPath, JSON.stringify(data, null, 2));
+        await writeFile(packageJsonPath, JSON.stringify(data, null, 4));
     } catch (error) {
         console.error(
             'Could not update NPM version for ',
