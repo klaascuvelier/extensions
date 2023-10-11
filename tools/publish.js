@@ -5,31 +5,32 @@ const semanticRelease = require('semantic-release');
 const { readFileSync, writeFileSync, existsSync } = require('fs');
 const { git } = require('commitizen/dist/cli/strategies');
 const { FsTree } = require('nx/src/generators/tree');
+const { readFile, writeFile } = require('fs/promises');
+const { join } = require('node:path');
 
 (async function publish() {
     buildProjects();
 
-    // const { version, notes, gitTag } = await getVersion();
-    // if (!version) {
-    //     console.log('no release');
-    //     return;
-    // }
-    const version = '2.7.0-beta.0';
-    // const otp = getOtp();
-    // console.log('✅ OTP');
+    const { version, notes, gitTag } = await getVersion();
+    if (!version) {
+        console.log('no release');
+        return;
+    }
+    const otp = getOtp();
+    console.log('✅ retrieved OTP');
     console.log('start');
-    execSync(`npm version ${version}`, { stdio: 'inherit' });
-    console.log('✅ NPMV');
-    // updateChangelog(notes);
-    //  console.log('✅ CHANGELOG');
-    //pushGitTag(gitTag);
-    //  console.log('✅ GITTAG');
+    await setNpmVersion(join(process.cwd(), 'package.json'), version);
+    console.log('✅ Set npm version');
+    updateChangelog(notes);
+    console.log('✅ Updated changelog');
+    pushGitTag(gitTag);
+    console.log('✅ Tagged successfully');
 
     const packages = getPackages();
 
     for (const package of packages) {
         const [name, destination, source] = package;
-        publishPackage(name, destination, source, version, otp);
+        await publishPackage(name, destination, source, version, otp);
     }
 
     // remove package.json updates
@@ -94,12 +95,27 @@ async function getVersion() {
     return {};
 }
 
-function publishPackage(package, destination, source, version, otp) {
+async function publishPackage(package, destination, source, version, otp) {
     console.log(`Publishing ${package} to version ${version}`);
-    try {
-        execSync(`npm version ${version}`, { cwd: destination });
-        execSync(`npm version ${version}`, { cwd: source });
-    } catch (e) {}
+
+    await setNpmVersion(join(destination, 'package.json'), version);
+    await setNpmVersion(join(source, 'package.json'), version);
 
     execSync(`npm publish -access public -otp ${otp}`, { cwd: destination });
+}
+
+async function setNpmVersion(packageJsonPath, version) {
+    try {
+        const content = await readFile(packageJsonPath, 'utf8');
+        const data = JSON.parse(content);
+        data.version = version;
+        await writeFile(packageJsonPath, JSON.stringify(data, null, 2));
+    } catch (error) {
+        console.error(
+            'Could not update NPM version for ',
+            packageJsonPath,
+            error
+        );
+        process.exit(1);
+    }
 }
