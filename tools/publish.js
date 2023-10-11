@@ -18,7 +18,6 @@ const { join } = require('node:path');
     }
     const otp = getOtp();
     console.log('✅ retrieved OTP');
-    console.log('start');
     await setNpmVersion(join(process.cwd(), 'package.json'), version);
     console.log('✅ Set npm version');
     updateChangelog(notes);
@@ -48,7 +47,7 @@ function updateChangelog(notes) {
 
 function pushGitTag(tag) {
     execSync(
-        `git add CHANGELOG.md package.json package-lock.json && git commit -m "release 🚀: ${tag}" && git push origin --all`
+        `git add CHANGELOG.md package.json package-lock.json && git commit -m "release 🚀: ${tag}" --no-verify && git push origin --all`
     );
 }
 
