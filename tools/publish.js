@@ -7,6 +7,7 @@ const { git } = require('commitizen/dist/cli/strategies');
 const { FsTree } = require('nx/src/generators/tree');
 const { readFile, writeFile } = require('fs/promises');
 const { join } = require('node:path');
+const inquirer = require('inquirer');
 
 (async function publish() {
     buildProjects();
@@ -16,6 +17,15 @@ const { join } = require('node:path');
         console.log('no release');
         return;
     }
+    const confirm = await inquirer.prompt([
+        { type: 'confirm', name: 'continue', message: `Release ${version}?` },
+    ]);
+
+    if (!confirm.continue) {
+        console.log('release cancelled');
+        process.exit();
+    }
+
     const otp = getOtp();
     console.log('✅ retrieved OTP');
     await setNpmVersion(join(process.cwd(), 'package.json'), version);
