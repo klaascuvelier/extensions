@@ -5,6 +5,22 @@
 
 * changes for wrangler 3 ([dd8b236](https://github.com/klaascuvelier/nx-additions/commit/dd8b236738244a80a6fa2a34b56302d475ee1502))
 * correct commands ([6e851c6](https://github.com/klaascuvelier/nx-additions/commit/6e851c615347fbfc0fd6b2e795a631c50aded850))
+* empty commit to force publish ([51bde14](https://github.com/klaascuvelier/nx-additions/commit/51bde141eb3c0b8a929cd8206e83ed6306c801f4))
+
+
+### Features
+
+* start changes for wrangler 3 ([49cb861](https://github.com/klaascuvelier/nx-additions/commit/49cb8616bd8a323695e5dd2bae501d38d01d254f))
+
+
+
+# [2.7.0](https://github.com/klaascuvelier/nx-additions/compare/v2.6.1...v2.7.0) (2023-10-11)
+
+
+### Bug Fixes
+
+* changes for wrangler 3 ([dd8b236](https://github.com/klaascuvelier/nx-additions/commit/dd8b236738244a80a6fa2a34b56302d475ee1502))
+* correct commands ([6e851c6](https://github.com/klaascuvelier/nx-additions/commit/6e851c615347fbfc0fd6b2e795a631c50aded850))
 
 
 ### Features
