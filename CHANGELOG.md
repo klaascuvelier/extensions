@@ -1,3 +1,23 @@
+# [2.7.0](https://github.com/klaascuvelier/nx-additions/compare/v2.6.1...v2.7.0) (2023-11-16)
+
+
+### Bug Fixes
+
+* 🐛 tooling ([3a26757](https://github.com/klaascuvelier/nx-additions/commit/3a267570498bd07a0fd9b89564611ac112b8f62a))
+* changes for wrangler 3 ([dd8b236](https://github.com/klaascuvelier/nx-additions/commit/dd8b236738244a80a6fa2a34b56302d475ee1502))
+* correct commands ([6e851c6](https://github.com/klaascuvelier/nx-additions/commit/6e851c615347fbfc0fd6b2e795a631c50aded850))
+* empty commit for bump ([a07f109](https://github.com/klaascuvelier/nx-additions/commit/a07f1095180654be0297c746e4d3df2ac45b8988))
+* empty commit to force publish ([51bde14](https://github.com/klaascuvelier/nx-additions/commit/51bde141eb3c0b8a929cd8206e83ed6306c801f4))
+
+
+### Features
+
+* 🎸 NX upgrade ([75c7bd5](https://github.com/klaascuvelier/nx-additions/commit/75c7bd52816bf61d4652e06edb5e39804393a993))
+* start changes for wrangler 3 ([49cb861](https://github.com/klaascuvelier/nx-additions/commit/49cb8616bd8a323695e5dd2bae501d38d01d254f))
+* upgrade to Node 21.1 ([3c12211](https://github.com/klaascuvelier/nx-additions/commit/3c12211171ba4f2a0a372279f2421e3f4ad626a1))
+
+
+
 ## [2.7.1](https://github.com/klaascuvelier/nx-additions/compare/v2.6.1...v2.7.1) (2023-10-11)
 
 
