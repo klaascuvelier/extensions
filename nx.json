@@ -1,17 +1,6 @@
 {
-    "npmScope": "nx-additions",
     "affected": {
         "defaultBase": "main"
-    },
-    "tasksRunnerOptions": {
-        "default": {
-            "runner": "nx-cloud",
-            "options": {
-                "cacheableOperations": ["build", "lint", "test", "e2e"],
-                "parallel": 1,
-                "accessToken": "NmZlZjJlYTktNmU4Yi00NGJiLTlmYzUtMmE3YTQ4NjE3Y2RlfHJlYWQtd3JpdGU="
-            }
-        }
     },
     "workspaceLayout": {
         "appsDir": "packages",
@@ -21,17 +10,29 @@
     "targetDefaults": {
         "build": {
             "dependsOn": ["^build"],
-            "inputs": ["production", "^production"]
+            "inputs": ["production", "^production"],
+            "cache": true
         },
-        "test": {
+        "lint": {
+            "inputs": ["default", "{workspaceRoot}/.eslintrc.json"],
+            "cache": true
+        },
+        "@nx/jest:jest": {
             "inputs": [
                 "default",
                 "^production",
                 "{workspaceRoot}/jest.preset.js"
-            ]
-        },
-        "lint": {
-            "inputs": ["default", "{workspaceRoot}/.eslintrc.json"]
+            ],
+            "cache": true,
+            "options": {
+                "passWithNoTests": true
+            },
+            "configurations": {
+                "ci": {
+                    "ci": true,
+                    "codeCoverage": true
+                }
+            }
         }
     },
     "namedInputs": {
@@ -45,5 +46,7 @@
             "!{projectRoot}/.eslintrc.json",
             "!{projectRoot}/src/test-setup.[jt]s"
         ]
-    }
+    },
+    "nxCloudAccessToken": "NmZlZjJlYTktNmU4Yi00NGJiLTlmYzUtMmE3YTQ4NjE3Y2RlfHJlYWQtd3JpdGU=",
+    "parallel": 1
 }

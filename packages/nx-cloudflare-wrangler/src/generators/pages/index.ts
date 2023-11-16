@@ -10,9 +10,6 @@ export default async function projectGenerator(
     tree: Tree,
     schema: CloudflarePagesProjectSchema
 ) {
-    const appName =
-        (schema.directory ? `${schema.directory}-` : '') + schema.name;
-
     addTargets(
         tree,
         schema.name,
