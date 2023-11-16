@@ -5,7 +5,7 @@
     "projectType": "library",
     "targets": {
         "lint": {
-            "executor": "@nx/linter:eslint",
+            "executor": "@nx/eslint:lint",
             "options": {
                 "lintFilePatterns": ["packages/nx-rsync-deployer/**/*.ts"]
             },
@@ -15,8 +15,7 @@
             "executor": "@nx/jest:jest",
             "outputs": ["{workspaceRoot}/coverage/packages/nx-rsync-deployer"],
             "options": {
-                "jestConfig": "packages/nx-rsync-deployer/jest.config.ts",
-                "passWithNoTests": true
+                "jestConfig": "packages/nx-rsync-deployer/jest.config.ts"
             }
         },
         "build": {
@@ -44,8 +43,7 @@
                         "glob": "{generators,executors}.json",
                         "output": "."
                     }
-                ],
-                "updateBuildableProjectDepsInPackageJson": true
+                ]
             }
         }
     },

@@ -1,11 +1,7 @@
-import { ExecutorContext } from '@nx/devkit';
 import { execSync } from 'child_process';
 import { DeployExecutorSchema } from './schema';
 
-export default async function deployExecutor(
-    options: DeployExecutorSchema,
-    context: ExecutorContext
-) {
+export default async function deployExecutor(options: DeployExecutorSchema) {
     const { siteId, skipBuild, prod, outputPath } = options;
 
     if (!skipBuild) {

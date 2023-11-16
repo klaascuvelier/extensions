@@ -5,7 +5,7 @@
     "projectType": "library",
     "targets": {
         "lint": {
-            "executor": "@nx/linter:eslint",
+            "executor": "@nx/eslint:lint",
             "outputs": ["{options.outputFile}"],
             "options": {
                 "lintFilePatterns": ["packages/nx-cloudflare-wrangler/**/*.ts"]
@@ -17,8 +17,7 @@
                 "{workspaceRoot}/coverage/packages/nx-cloudflare-wrangler"
             ],
             "options": {
-                "jestConfig": "packages/nx-cloudflare-wrangler/jest.config.ts",
-                "passWithNoTests": true
+                "jestConfig": "packages/nx-cloudflare-wrangler/jest.config.ts"
             }
         },
         "build": {
@@ -46,8 +45,7 @@
                         "glob": "{generators,executors}.json",
                         "output": "."
                     }
-                ],
-                "updateBuildableProjectDepsInPackageJson": true
+                ]
             }
         }
     },

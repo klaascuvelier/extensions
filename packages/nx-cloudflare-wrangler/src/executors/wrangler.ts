@@ -18,7 +18,7 @@ export function runWranglerCommandForProject(
     context: ExecutorContext,
     command: 'dev' | 'deploy' | 'pages deploy' | 'pages dev'
 ) {
-    const { projectName, target } = context;
+    const { projectName } = context;
 
     const tree = new FsTree(process.cwd(), false);
     const projectConfiguration = readProjectConfiguration(tree, projectName);

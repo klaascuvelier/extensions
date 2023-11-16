@@ -5,7 +5,7 @@
     "projectType": "library",
     "targets": {
         "lint": {
-            "executor": "@nx/linter:eslint",
+            "executor": "@nx/eslint:lint",
             "outputs": ["{options.outputFile}"],
             "options": {
                 "lintFilePatterns": ["packages/nx-deno-deploy/**/*.ts"]
@@ -15,8 +15,7 @@
             "executor": "@nx/jest:jest",
             "outputs": ["{workspaceRoot}/coverage/packages/nx-deno-deploy"],
             "options": {
-                "jestConfig": "packages/nx-deno-deploy/jest.config.ts",
-                "passWithNoTests": true
+                "jestConfig": "packages/nx-deno-deploy/jest.config.ts"
             }
         },
         "build": {
@@ -49,8 +48,7 @@
                         "glob": "{generators,executors}.json",
                         "output": "."
                     }
-                ],
-                "updateBuildableProjectDepsInPackageJson": true
+                ]
             }
         }
     },
