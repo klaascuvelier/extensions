@@ -21,8 +21,8 @@
     "generators": "./generators.json",
     "executors": "./executors.json",
     "peerDependencies": {
-        "@nx/devkit": ">=16.0.0",
-        "@nx/node": ">=16.0.0",
+        "@nx/devkit": ">=17.0.0",
+        "@nx/node": ">=17.0.0",
         "@serverless-stack/core": "~1.18.4",
         "@serverless-stack/cli": "~1.18.4",
         "@serverless-stack/resources": "~1.18.4",
