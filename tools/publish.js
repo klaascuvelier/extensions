@@ -117,14 +117,18 @@ async function publishPackage(package, destination, source, version, otp) {
     );
     const packageInfo = JSON.parse(packageInfoRaw);
 
+    console.log(`ℹ️ Publishing ${packageInfo.name} to npm`);
     execSync(`npm publish -access public -otp ${otp}`, { cwd: destination });
 
     if (packageInfo.deprecationMessage) {
+        console.log(`⚠️ Deprecating ${packageInfo.name} on npm`);
         execSync(
             `npm deprecate ${packageInfo.name} "${packageInfo.deprecationMessage}" -otp ${otp}`,
             { cwd: destination }
         );
     }
+
+    console.log(`\n\n`);
 }
 
 async function setNpmVersion(packageJsonPath, version) {
