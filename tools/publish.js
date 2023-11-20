@@ -111,7 +111,20 @@ async function publishPackage(package, destination, source, version, otp) {
     await setNpmVersion(join(destination, 'package.json'), version);
     await setNpmVersion(join(source, 'package.json'), version);
 
+    const packageInfoRaw = await readFile(
+        join(destination, 'package.json'),
+        'utf8'
+    );
+    const packageInfo = JSON.parse(packageInfoRaw);
+
     execSync(`npm publish -access public -otp ${otp}`, { cwd: destination });
+
+    if (packageInfo.deprecationMessage) {
+        execSync(
+            `npm deprecate ${packageInfo.name} ${packageInfo.deprecationMessage} -otp ${otp}`,
+            { cwd: destination }
+        );
+    }
 }
 
 async function setNpmVersion(packageJsonPath, version) {
