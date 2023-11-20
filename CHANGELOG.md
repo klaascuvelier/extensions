@@ -1,3 +1,12 @@
+# [2.8.0](https://github.com/klaascuvelier/nx-additions/compare/v2.7.1...v2.8.0) (2023-11-20)
+
+
+### Features
+
+* nx 17, angular 17, node 21 ([d6e8cd2](https://github.com/klaascuvelier/nx-additions/commit/d6e8cd2675a26721db3e65253a38f45ad7520876))
+
+
+
 ## [2.7.1](https://github.com/klaascuvelier/nx-additions/compare/v2.6.1...v2.7.1) (2023-10-11)
 
 ### Bug Fixes
