@@ -1,3 +1,12 @@
+## [2.9.1](https://github.com/klaascuvelier/nx-additions/compare/vv2.9.0...v2.9.1) (2023-11-20)
+
+
+### Bug Fixes
+
+* 🐛 deprecate correct package ([56637d5](https://github.com/klaascuvelier/nx-additions/commit/56637d5dcbfe6e32eab6c81e7ad87e271929a5b4))
+
+
+
 # [2.9.0](https://github.com/klaascuvelier/nx-additions/compare/v2.8.0...v2.9.0) (2023-11-20)
 
 
