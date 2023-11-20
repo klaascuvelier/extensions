@@ -57,7 +57,7 @@ function updateChangelog(notes) {
 
 function pushGitTag(tag) {
     execSync(
-        `git add CHANGELOG.md package.json package-lock.json && HUSKY=0 git commit -m "release 🚀: ${tag}" --no-verify && git push origin --all`,
+        `git add CHANGELOG.md package.json package-lock.json && HUSKY=0 git commit -m "release 🚀: ${tag}" --no-verify && git tag v${tag}  && git push origin --all && git push origin --tags`,
         { stdio: 'inherit' }
     );
 }
