@@ -25,5 +25,6 @@
         "@nx/devkit": ">=17.0.0",
         "@nx/node": ">=17.0.0",
         "tslib": ">=2.0.0"
-    }
+    },
+    "deprecationMessage": "@k11r/nx-deno-deploy is deprecated. we recommend using @nx/deno instead."
 }
