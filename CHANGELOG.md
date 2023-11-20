@@ -1,3 +1,12 @@
+# [2.9.0](https://github.com/klaascuvelier/nx-additions/compare/v2.8.0...v2.9.0) (2023-11-20)
+
+
+### Features
+
+* 🎸 deprecate deno package ([f91c018](https://github.com/klaascuvelier/nx-additions/commit/f91c01875c9f7d02c27599d1cdfb32a93b3f9726))
+
+
+
 # [2.8.0](https://github.com/klaascuvelier/nx-additions/compare/v2.7.1...v2.8.0) (2023-11-20)
 
 
