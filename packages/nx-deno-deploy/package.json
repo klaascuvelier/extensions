@@ -1,7 +1,7 @@
 {
     "name": "@k11r/nx-deno-deploy",
     "version": "1.0.0",
-    "description": "Nx Plugin for Deno Deploy",
+    "description": "Nx Plugin for Deno Deploy. DEPRECATED: Use @nx/deno instead.",
     "repository": {
         "type": "git",
         "url": "https://github.com/klaascuvelier/nx-additions.git",
