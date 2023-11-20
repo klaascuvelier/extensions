@@ -121,7 +121,7 @@ async function publishPackage(package, destination, source, version, otp) {
 
     if (packageInfo.deprecationMessage) {
         execSync(
-            `npm deprecate ${packageInfo.name} ${packageInfo.deprecationMessage} -otp ${otp}`,
+            `npm deprecate ${packageInfo.name} "${packageInfo.deprecationMessage}" -otp ${otp}`,
             { cwd: destination }
         );
     }
