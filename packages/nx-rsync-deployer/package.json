@@ -22,5 +22,6 @@
     "peerDependencies": {
         "@angular-devkit/build-angular": "^17.0.0"
     },
-    "executors": "./executors.json"
+    "executors": "./executors.json",
+    "deprecationMessage": "@k11r/nx-deno-deploy is deprecated. we recommend using @nx/deno instead."
 }
