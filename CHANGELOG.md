@@ -1,3 +1,17 @@
+# [3.0.0-feat-sst-upgrade.1](https://github.com/klaascuvelier/nx-additions/compare/vv2.9.1...v3.0.0-feat-sst-upgrade.1) (2023-12-11)
+
+
+### Features
+
+* 🎸 upgrade peerdeps ([80538ec](https://github.com/klaascuvelier/nx-additions/commit/80538ec05c0a6279c4c9c3b7a4a41e80d7dac6e3))
+
+
+### BREAKING CHANGES
+
+* 🧨 new sst version
+
+
+
 ## [2.9.1](https://github.com/klaascuvelier/nx-additions/compare/vv2.9.0...v2.9.1) (2023-11-20)
 
 
