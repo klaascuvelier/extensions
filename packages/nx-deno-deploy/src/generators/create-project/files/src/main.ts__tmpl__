@@ -1,8 +1,0 @@
-import { serve } from "server";
-
-function handler(req: Request): Response {
-  return new Response("Hello from <%= name %>");
-}
-
-console.log("Listening on http://localhost:8000");
-await serve(handler);
