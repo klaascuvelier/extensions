@@ -3,13 +3,13 @@
     "description": "Nx Plugin for Cloudflare Wrangler",
     "repository": {
         "type": "git",
-        "url": "https://github.com/klaascuvelier/nx-additions.git",
+        "url": "https://github.com/klaascuvelier/extensions.git",
         "directory": "packages/nx-cloudflare-wrangler"
     },
     "author": "Klaas Cuvelier",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/klaascuvelier/nx-additions/issues"
+        "url": "https://github.com/klaascuvelier/extensions/issues"
     },
     "keywords": [
         "nx",

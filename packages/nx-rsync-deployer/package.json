@@ -4,13 +4,13 @@
     "description": "Nx Plugin for deploy using RSync",
     "repository": {
         "type": "git",
-        "url": "https://github.com/klaascuvelier/nx-additions.git",
+        "url": "https://github.com/klaascuvelier/extensions.git",
         "directory": "packages/nx-rsync-deployer"
     },
     "author": "Klaas Cuvelier",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/klaascuvelier/nx-additions/issues"
+        "url": "https://github.com/klaascuvelier/extensions/issues"
     },
     "keywords": [
         "nx",
