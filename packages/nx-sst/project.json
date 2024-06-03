@@ -3,13 +3,10 @@
     "$schema": "../../node_modules/nx/schemas/project-schema.json",
     "sourceRoot": "packages/nx-sst/src",
     "projectType": "library",
+    "tags": [],
     "targets": {
         "lint": {
-            "executor": "@nx/eslint:lint",
-            "outputs": ["{options.outputFile}"],
-            "options": {
-                "lintFilePatterns": ["packages/nx-sst/**/*.ts"]
-            }
+            "executor": "@nx/eslint:lint"
         },
         "test": {
             "executor": "@nx/jest:jest",
@@ -46,6 +43,5 @@
                 ]
             }
         }
-    },
-    "tags": []
+    }
 }

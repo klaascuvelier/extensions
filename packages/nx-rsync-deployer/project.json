@@ -3,13 +3,10 @@
     "$schema": "../../node_modules/nx/schemas/project-schema.json",
     "sourceRoot": "packages/nx-rsync-deployer/src",
     "projectType": "library",
+    "tags": [],
     "targets": {
         "lint": {
-            "executor": "@nx/eslint:lint",
-            "options": {
-                "lintFilePatterns": ["packages/nx-rsync-deployer/**/*.ts"]
-            },
-            "outputs": ["{options.outputFile}"]
+            "executor": "@nx/eslint:lint"
         },
         "test": {
             "executor": "@nx/jest:jest",
@@ -46,6 +43,5 @@
                 ]
             }
         }
-    },
-    "tags": []
+    }
 }

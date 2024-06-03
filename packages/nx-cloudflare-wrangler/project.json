@@ -3,13 +3,10 @@
     "$schema": "../../node_modules/nx/schemas/project-schema.json",
     "sourceRoot": "packages/nx-cloudflare-wrangler/src",
     "projectType": "library",
+    "tags": [],
     "targets": {
         "lint": {
-            "executor": "@nx/eslint:lint",
-            "outputs": ["{options.outputFile}"],
-            "options": {
-                "lintFilePatterns": ["packages/nx-cloudflare-wrangler/**/*.ts"]
-            }
+            "executor": "@nx/eslint:lint"
         },
         "test": {
             "executor": "@nx/jest:jest",
@@ -48,6 +45,5 @@
                 ]
             }
         }
-    },
-    "tags": []
+    }
 }

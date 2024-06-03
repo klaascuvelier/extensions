@@ -1,7 +1,4 @@
 {
-    "affected": {
-        "defaultBase": "main"
-    },
     "workspaceLayout": {
         "appsDir": "packages",
         "libsDir": "packages"
@@ -11,10 +8,6 @@
         "build": {
             "dependsOn": ["^build"],
             "inputs": ["production", "^production"],
-            "cache": true
-        },
-        "lint": {
-            "inputs": ["default", "{workspaceRoot}/.eslintrc.json"],
             "cache": true
         },
         "@nx/jest:jest": {
@@ -33,6 +26,10 @@
                     "codeCoverage": true
                 }
             }
+        },
+        "@nx/eslint:lint": {
+            "inputs": ["default", "{workspaceRoot}/.eslintrc.json"],
+            "cache": true
         }
     },
     "namedInputs": {
@@ -48,5 +45,7 @@
         ]
     },
     "nxCloudAccessToken": "NmZlZjJlYTktNmU4Yi00NGJiLTlmYzUtMmE3YTQ4NjE3Y2RlfHJlYWQtd3JpdGU=",
-    "parallel": 1
+    "parallel": 1,
+    "useInferencePlugins": false,
+    "defaultBase": "main"
 }
