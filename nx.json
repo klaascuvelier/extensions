@@ -44,7 +44,6 @@
             "!{projectRoot}/src/test-setup.[jt]s"
         ]
     },
-    "nxCloudAccessToken": "NmZlZjJlYTktNmU4Yi00NGJiLTlmYzUtMmE3YTQ4NjE3Y2RlfHJlYWQtd3JpdGU=",
     "parallel": 1,
     "useInferencePlugins": false,
     "defaultBase": "main"
