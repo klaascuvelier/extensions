@@ -4,7 +4,7 @@ import { WorkerDeployExecutorSchema } from './schema';
 
 export default async function deployExecutor(
     options: WorkerDeployExecutorSchema,
-    context: ExecutorContext
+    context: ExecutorContext,
 ) {
     return runWranglerCommandForProject(options, context, 'deploy');
 }

@@ -1,5 +1,5 @@
 {
-  "name": "<%= name %>",
-  "region": "<%= region %>",
-  "main": "stacks/index.ts"
+    "name": "<%= name %>",
+    "region": "<%= region %>",
+    "main": "stacks/index.ts"
 }

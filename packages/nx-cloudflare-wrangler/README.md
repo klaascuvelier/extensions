@@ -17,4 +17,4 @@ Creates a new NX project (based on the node template) with a new worker.
 
 `npx nx g @k11r/nx-cloudflare-wrangler:pages <app-name>`
 
-This will only add a `deploy` target, the `build` property in `wrangler.toml` will point to the `build` target of the project. 
+This will only add a `deploy` target, the `build` property in `wrangler.toml` will point to the `build` target of the project.

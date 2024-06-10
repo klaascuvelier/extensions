@@ -13,7 +13,7 @@ import { CloudflareWorkerProjectSchema } from './schema';
 
 export default async function projectGenerator(
     tree: Tree,
-    schema: CloudflareWorkerProjectSchema
+    schema: CloudflareWorkerProjectSchema,
 ) {
     await applicationGenerator(tree, schema);
 
@@ -40,7 +40,7 @@ export default async function projectGenerator(
                 fileChange.type === 'CREATE' &&
                 !fileChange.path.endsWith('/project.json') &&
                 !fileChange.path.endsWith('.eslintrc.json') &&
-                fileChange.path !== 'workspace.json'
+                fileChange.path !== 'workspace.json',
         )
         .forEach((fileChange) => {
             tree.delete(fileChange.path);
@@ -98,7 +98,7 @@ function updateGitIgnore(tree: Tree) {
             : ``;
         const ignores = content.split(`\n`);
         const ignoresToAdd = requiredIgnores.filter(
-            (newIgnore) => !ignores.find((i) => i.trim() === newIgnore.trim())
+            (newIgnore) => !ignores.find((i) => i.trim() === newIgnore.trim()),
         );
         tree.write('.gitignore', content + `\n` + ignoresToAdd.join(`\n`));
     } catch (e) {

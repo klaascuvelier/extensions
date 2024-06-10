@@ -6,7 +6,7 @@ import { PagesDeployExecutorSchema } from './schema';
 
 export default async function deployExecutor(
     options: PagesDeployExecutorSchema,
-    context: ExecutorContext
+    context: ExecutorContext,
 ) {
     if (options.dist) {
         options.dist = resolve(process.cwd(), options.dist);
@@ -14,7 +14,7 @@ export default async function deployExecutor(
     const dist = joinPathFragments(
         process.cwd(),
         context.workspace.projects[context.projectName].targets.build.options
-            .outputPath
+            .outputPath,
     );
     const branch = execSync('git rev-parse --abbrev-ref HEAD')
         .toString()
@@ -31,9 +31,5 @@ export default async function deployExecutor(
         ...options,
     };
 
-    return runWranglerCommandForProject(
-        deployOptions,
-        context,
-        'pages deploy'
-    );
+    return runWranglerCommandForProject(deployOptions, context, 'pages deploy');
 }

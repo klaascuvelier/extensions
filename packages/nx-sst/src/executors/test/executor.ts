@@ -4,7 +4,7 @@ import { TextExecutorSchema } from './schema';
 
 export default async function testExecutor(
     options: TextExecutorSchema,
-    context: ExecutorContext
+    context: ExecutorContext,
 ) {
     return runSstCommandForProject(options, context, 'test');
 }

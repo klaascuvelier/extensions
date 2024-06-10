@@ -58,7 +58,7 @@ function updateChangelog(notes) {
 function pushGitTag(tag) {
     execSync(
         `git add CHANGELOG.md package.json package-lock.json && HUSKY=0 git commit -m "release 🚀: ${tag}" --no-verify && git tag v${tag}  && git push origin --all && git push origin --tags`,
-        { stdio: 'inherit' }
+        { stdio: 'inherit' },
     );
 }
 
@@ -113,7 +113,7 @@ async function publishPackage(package, destination, source, version, otp) {
 
     const packageInfoRaw = await readFile(
         join(destination, 'package.json'),
-        'utf8'
+        'utf8',
     );
     const packageInfo = JSON.parse(packageInfoRaw);
 
@@ -124,7 +124,7 @@ async function publishPackage(package, destination, source, version, otp) {
         console.log(`⚠️ Deprecating ${packageInfo.name} on npm`);
         execSync(
             `npm deprecate ${packageInfo.name} "${packageInfo.deprecationMessage}" -otp ${otp}`,
-            { cwd: destination }
+            { cwd: destination },
         );
     }
 
@@ -141,7 +141,7 @@ async function setNpmVersion(packageJsonPath, version) {
         console.error(
             'Could not update NPM version for ',
             packageJsonPath,
-            error
+            error,
         );
         process.exit(1);
     }

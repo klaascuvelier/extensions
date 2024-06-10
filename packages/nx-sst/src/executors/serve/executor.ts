@@ -4,7 +4,7 @@ import { ServeExecutorSchema } from './schema';
 
 export default async function serveExecutor(
     options: ServeExecutorSchema,
-    context: ExecutorContext
+    context: ExecutorContext,
 ) {
     return runSstCommandForProject(options, context, 'start');
 }

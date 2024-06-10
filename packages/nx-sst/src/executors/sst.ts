@@ -10,7 +10,7 @@ export const SST_OPTION_KEYS = ['profile', 'stage', 'region', 'role-arn'];
 export function runSstCommandForProject(
     options: ServeExecutorSchema,
     context: ExecutorContext,
-    command: sstCommand
+    command: sstCommand,
 ): Promise<{ success: boolean; message?: string }> {
     const { projectName, target } = context;
     const executorOptions = target.options ?? {};

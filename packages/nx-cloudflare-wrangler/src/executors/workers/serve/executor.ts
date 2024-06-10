@@ -4,7 +4,7 @@ import { WorkerServeExecutorSchema } from './schema';
 
 export default async function serveExecutor(
     options: WorkerServeExecutorSchema,
-    context: ExecutorContext
+    context: ExecutorContext,
 ) {
     return runWranglerCommandForProject(options, context, 'dev');
 }

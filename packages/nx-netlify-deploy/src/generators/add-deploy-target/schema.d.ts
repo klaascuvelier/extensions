@@ -1,5 +1,5 @@
 export interface AddDeployTargetGeneratorSchema {
-  appName: string;
-  siteId: string;
-  outputPath?: string;
+    appName: string;
+    siteId: string;
+    outputPath?: string;
 }

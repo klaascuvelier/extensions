@@ -1,29 +1,29 @@
 {
-  "$schema": "http://json-schema.org/schema",
-  "cli": "nx",
-  "title": "Deploy executor",
-  "type": "object",
-  "properties": {
-    "dist": {
-      "type": "string",
-      "description": "Location of the build output to deploy"
+    "$schema": "http://json-schema.org/schema",
+    "cli": "nx",
+    "title": "Deploy executor",
+    "type": "object",
+    "properties": {
+        "dist": {
+            "type": "string",
+            "description": "Location of the build output to deploy"
+        },
+        "branch": {
+            "type": "string",
+            "description": "The name of the branch you want to deploy to."
+        },
+        "commitHash": {
+            "type": "string",
+            "description": "The SHA to attach to this deployment."
+        },
+        "commitMessage": {
+            "type": "string",
+            "description": "The commit message to attach to this deployment"
+        },
+        "commitDirty": {
+            "type": "boolean",
+            "description": "Whether or not the workspace should be considered dirty for this deployment."
+        }
     },
-    "branch": {
-      "type": "string",
-      "description": "The name of the branch you want to deploy to."
-    },
-    "commitHash": {
-      "type": "string",
-      "description": "The SHA to attach to this deployment."
-    },
-    "commitMessage": {
-      "type": "string",
-      "description": "The commit message to attach to this deployment"
-    },
-    "commitDirty": {
-      "type": "boolean",
-      "description": "Whether or not the workspace should be considered dirty for this deployment."
-    }
-  },
-  "required": []
+    "required": []
 }

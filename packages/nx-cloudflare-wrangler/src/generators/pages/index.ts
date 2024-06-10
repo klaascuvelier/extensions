@@ -8,14 +8,14 @@ import { CloudflarePagesProjectSchema } from './schema';
 
 export default async function projectGenerator(
     tree: Tree,
-    schema: CloudflarePagesProjectSchema
+    schema: CloudflarePagesProjectSchema,
 ) {
     addTargets(
         tree,
         schema.name,
         schema.projectName && schema.projectName.length > 0
             ? { projectName: schema.projectName }
-            : {}
+            : {},
     );
 
     return () => {
@@ -26,7 +26,7 @@ export default async function projectGenerator(
 function addTargets(
     tree: Tree,
     appName: string,
-    cloudflareOptions: Record<string, string>
+    cloudflareOptions: Record<string, string>,
 ) {
     try {
         const projectConfiguration = readProjectConfiguration(tree, appName);

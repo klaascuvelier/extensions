@@ -20,7 +20,7 @@ const SST_OPTION_MAP = {
 
 export default async function projectGenerator(
     tree: Tree,
-    schema: CreateSstProjectSchema
+    schema: CreateSstProjectSchema,
 ) {
     await applicationGenerator(tree, schema);
 
@@ -30,7 +30,7 @@ export default async function projectGenerator(
     const projectRoot = projectConfiguration.root;
 
     const sstOptions: Record<string, string> = Object.keys(
-        SST_OPTION_MAP
+        SST_OPTION_MAP,
     ).reduce((acc, optionKey) => {
         const schemaKey = SST_OPTION_MAP[optionKey];
         if (schema[schemaKey]?.length > 0) {
@@ -54,7 +54,7 @@ export default async function projectGenerator(
                 fileChange.type === 'CREATE' &&
                 !fileChange.path.endsWith('/project.json') &&
                 !fileChange.path.endsWith('.eslintrc.json') &&
-                fileChange.path !== 'workspace.json'
+                fileChange.path !== 'workspace.json',
         )
         .forEach((fileChange) => {
             tree.delete(fileChange.path);
@@ -74,7 +74,7 @@ export default async function projectGenerator(
 function addTargets(
     tree: Tree,
     appName: string,
-    sstOptions: Record<string, string>
+    sstOptions: Record<string, string>,
 ) {
     try {
         const projectConfiguration = readProjectConfiguration(tree, appName);
@@ -116,7 +116,7 @@ function updateGitIgnore(tree: Tree) {
             : ``;
         const ignores = content.split(`\n`);
         const ignoresToAdd = requiredIgnores.filter(
-            (newIgnore) => !ignores.find((i) => i.trim() === newIgnore.trim())
+            (newIgnore) => !ignores.find((i) => i.trim() === newIgnore.trim()),
         );
         tree.write('.gitignore', content + `\n` + ignoresToAdd.join(`\n`));
     } catch (e) {

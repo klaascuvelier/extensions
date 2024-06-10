@@ -4,18 +4,18 @@ import { WorkerBuildExecutorSchema } from './schema';
 
 export default async function buildExecutor(
     options: WorkerBuildExecutorSchema,
-    context: ExecutorContext
+    context: ExecutorContext,
 ) {
     try {
         const buildTarget =
             context.workspace.projects[context.projectName].targets.build;
         const outputPath = joinPathFragments(
             workspaceRoot,
-            buildTarget.options.outputPath
+            buildTarget.options.outputPath,
         );
         const entryFile = joinPathFragments(
             workspaceRoot,
-            buildTarget.options.main
+            buildTarget.options.main,
         );
 
         execSync(`rm -rf ${outputPath} || true`);

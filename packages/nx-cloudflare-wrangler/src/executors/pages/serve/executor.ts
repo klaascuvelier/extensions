@@ -5,7 +5,7 @@ import { PagesServeExecutorSchema } from './schema';
 
 export default async function deployExecutor(
     options: PagesServeExecutorSchema,
-    context: ExecutorContext
+    context: ExecutorContext,
 ) {
     if (options.dist) {
         options.dist = resolve(process.cwd(), options.dist);
@@ -13,7 +13,7 @@ export default async function deployExecutor(
     const dist = joinPathFragments(
         process.cwd(),
         context.workspace.projects[context.projectName].targets.build.options
-            .outputPath
+            .outputPath,
     );
 
     const deployOptions = {

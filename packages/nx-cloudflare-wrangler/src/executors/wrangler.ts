@@ -16,7 +16,7 @@ export function runWranglerCommandForProject(
         | WorkerDeployExecutorSchema
         | PagesDeployExecutorSchema,
     context: ExecutorContext,
-    command: 'dev' | 'deploy' | 'pages deploy' | 'pages dev'
+    command: 'dev' | 'deploy' | 'pages deploy' | 'pages dev',
 ) {
     const { projectName } = context;
 
@@ -31,24 +31,25 @@ export function runWranglerCommandForProject(
             '--project-name="' +
                 ((options as PagesDeployExecutorSchema).projectName ??
                     projectName) +
-                '"'
+                '"',
         );
         wranglerOptions.push(
-            '--branch="' + (options as PagesDeployExecutorSchema).branch + '"'
+            '--branch="' + (options as PagesDeployExecutorSchema).branch + '"',
         );
         wranglerOptions.push(
-            '--commit-hash=' + (options as PagesDeployExecutorSchema).commitHash
+            '--commit-hash=' +
+                (options as PagesDeployExecutorSchema).commitHash,
         );
         wranglerOptions.push(
             '--commit-message="' +
                 (options as PagesDeployExecutorSchema).commitMessage +
-                '"'
+                '"',
         );
         wranglerOptions.push(
             '--commit-dirty=' +
                 ((options as PagesDeployExecutorSchema).commitDirty
                     ? 'true'
-                    : 'false')
+                    : 'false'),
         );
     } else if (command === 'pages dev') {
         wranglerOptions.push((options as PagesDeployExecutorSchema).dist);
@@ -57,15 +58,15 @@ export function runWranglerCommandForProject(
             joinPathFragments(
                 workspaceRoot,
                 projectConfiguration.targets.build.options.outputPath,
-                'index.js'
-            )
+                'index.js',
+            ),
         );
     } else if (command === 'dev') {
         wranglerOptions.push(
             joinPathFragments(
                 workspaceRoot,
-                projectConfiguration.targets.build.options.main
-            )
+                projectConfiguration.targets.build.options.main,
+            ),
         );
     }
 

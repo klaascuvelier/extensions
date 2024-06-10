@@ -21,7 +21,7 @@ export type RsyncDeployExecutorSchema = {
 
 export default async function runExecutor(
     options: RsyncDeployExecutorSchema,
-    context: ExecutorContext
+    context: ExecutorContext,
 ) {
     const projectName = context.projectName;
     const {
@@ -47,7 +47,7 @@ export default async function runExecutor(
         await stat(buildOutputPath);
     } catch (e) {
         console.error(
-            `🧨 Build output path does not exist: ${buildOutputPath}`
+            `🧨 Build output path does not exist: ${buildOutputPath}`,
         );
         process.exit(1);
     }
@@ -58,8 +58,8 @@ export default async function runExecutor(
         indexHtml,
         indexContent.replace(
             /<base href="[^"]*">/,
-            `<base href="${deployUrl}">`
-        )
+            `<base href="${deployUrl}">`,
+        ),
     );
 
     return deploy(
@@ -70,7 +70,7 @@ export default async function runExecutor(
         rsyncUser,
         rsyncHost,
         preDeploy,
-        postDeploy
+        postDeploy,
     )
         .then(() => {
             console.info(`✔ Deploy Completed: ${deployUrl}`);
@@ -88,22 +88,22 @@ function extractConfig(config) {
             addDeployReplacements(
                 withFallback(
                     config.deployIdentifier,
-                    withFallback(getGitBranch(), '')
-                )
+                    withFallback(getGitBranch(), ''),
+                ),
             ),
-            ''
-        )
+            '',
+        ),
     ).toLowerCase();
     const rsyncTarget = stripEndSlash(
-        withFallback(config.rsyncTarget, schemaProperties.rsyncTarget.default)
+        withFallback(config.rsyncTarget, schemaProperties.rsyncTarget.default),
     );
     const rsyncUser = withFallback(
         config.rsyncUser,
-        schemaProperties.rsyncUser.default
+        schemaProperties.rsyncUser.default,
     );
     const rsyncHost = withFallback(
         config.rsyncHost,
-        schemaProperties.rsyncHost.default
+        schemaProperties.rsyncHost.default,
     );
     const previewUrl = withFallback(config.previewUrl, null);
     const preDeploy = (config.preDeploy ?? [])
@@ -156,7 +156,7 @@ function extractConfig(config) {
         return `${date.getFullYear()}${padStart(
             date.getMonth(),
             2,
-            '0'
+            '0',
         )}${padStart(date.getDate(), 2, '0')}`;
     }
 
@@ -194,7 +194,7 @@ function deploy(
     user,
     host,
     preDeploy,
-    postDeploy
+    postDeploy,
 ) {
     const privateKey = process.env.SSH_PRIVATE_KEY || '-';
     const args = [

@@ -4,7 +4,7 @@ import { DeployExecutorSchema } from './schema';
 
 export default async function deployExecutor(
     options: DeployExecutorSchema,
-    context: ExecutorContext
+    context: ExecutorContext,
 ) {
     return runSstCommandForProject(options, context, 'deploy');
 }

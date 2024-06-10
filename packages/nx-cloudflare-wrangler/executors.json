@@ -1,25 +1,25 @@
 {
-  "$schema": "http://json-schema.org/schema",
-  "executors": {
-    "serve-worker": {
-      "implementation": "./src/executors/workers/serve/executor",
-      "schema": "./src/executors/workers/serve/schema.json"
-    },
-    "deploy-worker": {
-      "implementation": "./src/executors/workers/deploy/executor",
-      "schema": "./src/executors/workers/deploy/schema.json"
-    },
-    "build-worker": {
-      "implementation": "./src/executors/workers/build/executor",
-      "schema": "./src/executors/workers/build/schema.json"
-    },
-    "serve-page": {
-      "implementation": "./src/executors/pages/serve/executor",
-      "schema": "./src/executors/pages/serve/schema.json"
-    },
-    "deploy-page": {
-      "implementation": "./src/executors/pages/deploy/executor",
-      "schema": "./src/executors/pages/deploy/schema.json"
+    "$schema": "http://json-schema.org/schema",
+    "executors": {
+        "serve-worker": {
+            "implementation": "./src/executors/workers/serve/executor",
+            "schema": "./src/executors/workers/serve/schema.json"
+        },
+        "deploy-worker": {
+            "implementation": "./src/executors/workers/deploy/executor",
+            "schema": "./src/executors/workers/deploy/schema.json"
+        },
+        "build-worker": {
+            "implementation": "./src/executors/workers/build/executor",
+            "schema": "./src/executors/workers/build/schema.json"
+        },
+        "serve-page": {
+            "implementation": "./src/executors/pages/serve/executor",
+            "schema": "./src/executors/pages/serve/schema.json"
+        },
+        "deploy-page": {
+            "implementation": "./src/executors/pages/deploy/executor",
+            "schema": "./src/executors/pages/deploy/schema.json"
+        }
     }
-  }
 }

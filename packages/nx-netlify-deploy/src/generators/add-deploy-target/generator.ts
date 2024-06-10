@@ -7,13 +7,13 @@ import { AddDeployTargetGeneratorSchema } from './schema';
 
 export default async function (
     tree: Tree,
-    options: AddDeployTargetGeneratorSchema
+    options: AddDeployTargetGeneratorSchema,
 ) {
     try {
         console.log("Adding 'deploy' target to " + options.appName);
         const projectConfiguration = readProjectConfiguration(
             tree,
-            options.appName
+            options.appName,
         );
         const outputPath =
             options.outputPath ??

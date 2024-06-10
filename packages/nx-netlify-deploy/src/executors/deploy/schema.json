@@ -1,28 +1,28 @@
 {
-  "$schema": "http://json-schema.org/schema",
-  "cli": "nx",
-  "title": "Deploy executor",
-  "description": "Deploys an app to Netlify",
-  "type": "object",
-  "properties": {
-    "siteId": {
-      "type": "string",
-      "description": "Netlify site id"
+    "$schema": "http://json-schema.org/schema",
+    "cli": "nx",
+    "title": "Deploy executor",
+    "description": "Deploys an app to Netlify",
+    "type": "object",
+    "properties": {
+        "siteId": {
+            "type": "string",
+            "description": "Netlify site id"
+        },
+        "outputPath": {
+            "type": "string",
+            "description": "Path to artifacts"
+        },
+        "skipBuild": {
+            "type": "boolean",
+            "description": "Should build step gets skipped",
+            "default": false
+        },
+        "prod": {
+            "type": "boolean",
+            "description": "Is production deploy",
+            "default": false
+        }
     },
-    "outputPath": {
-      "type": "string",
-      "description": "Path to artifacts"
-    },
-    "skipBuild": {
-      "type": "boolean",
-      "description": "Should build step gets skipped",
-      "default": false
-    },
-    "prod": {
-      "type": "boolean",
-      "description": "Is production deploy",
-      "default": false
-    }
-  },
-  "required": ["siteId", "outputPath"]
+    "required": ["siteId", "outputPath"]
 }
