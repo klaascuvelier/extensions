@@ -25,7 +25,7 @@
         "dep-graph": "nx dep-graph",
         "help": "nx help",
         "prepare": "husky install",
-        "publish": "node ./tools/publish.js"
+        "publish": "node -r @swc-node/register tools/publish.ts"
     },
     "private": true,
     "dependencies": {
