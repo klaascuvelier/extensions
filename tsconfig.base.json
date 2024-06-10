@@ -23,8 +23,7 @@
             ],
             "@k11r/nx-rsync-deployer": [
                 "packages/nx-rsync-deployer/src/index.ts"
-            ],
-            "@k11r/nx-sst": ["packages/nx-sst/src/index.ts"]
+            ]
         }
     },
     "exclude": ["node_modules", "tmp"]
