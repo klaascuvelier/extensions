@@ -18,7 +18,7 @@
         "cloudflare",
         "wrangler"
     ],
-    "version": "0.0.1",
+    "version": "0.1.0",
     "generators": "./generators.json",
     "executors": "./executors.json",
     "peerDependencies": {

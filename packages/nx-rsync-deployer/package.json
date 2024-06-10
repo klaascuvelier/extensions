@@ -1,6 +1,6 @@
 {
     "name": "@k11r/nx-rsync-deployer",
-    "version": "0.0.1",
+    "version": "0.1.0",
     "description": "Nx Plugin for deploy using RSync",
     "repository": {
         "type": "git",
