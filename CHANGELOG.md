@@ -1,3 +1,7 @@
+## 2.11.0 (2024-06-10)
+
+This was a version bump only, there were no code changes.
+
 ## 2.11.0-0 (2024-06-10)
 
 This was a version bump only, there were no code changes.
