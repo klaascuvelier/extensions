@@ -1,5 +1,6 @@
 {
     "name": "@k11r/nx-cloudflare-wrangler",
+    "version": "2.9.1",
     "description": "Nx Plugin for Cloudflare Wrangler",
     "repository": {
         "type": "git",
@@ -18,7 +19,6 @@
         "cloudflare",
         "wrangler"
     ],
-    "version": "0.1.0",
     "generators": "./generators.json",
     "executors": "./executors.json",
     "peerDependencies": {

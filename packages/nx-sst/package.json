@@ -1,6 +1,6 @@
 {
     "name": "@k11r/nx-sst",
-    "version": "0.1.0",
+    "version": "2.9.1",
     "description": "Nx Plugin for SST",
     "repository": {
         "type": "git",
