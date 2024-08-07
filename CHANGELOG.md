@@ -1,3 +1,7 @@
+## 2.11.2 (2024-08-07)
+
+This was a version bump only, there were no code changes.
+
 ## 2.11.1 (2024-08-07)
 
 This was a version bump only, there were no code changes.
@@ -12,25 +16,24 @@ This was a version bump only, there were no code changes.
 
 ## 2.10.0-0 (2024-06-10)
 
-
 ### 🚀 Features
 
-- 🎸 deprecate deno package ([f91c018](https://github.com/klaascuvelier/extensions/commit/f91c018))
-- upgrade nx ([f3393ae](https://github.com/klaascuvelier/extensions/commit/f3393ae))
-- 🎸 remove deno deploy from packages ([b1d2391](https://github.com/klaascuvelier/extensions/commit/b1d2391))
-- 🎸 deprecate sst package ([f8861aa](https://github.com/klaascuvelier/extensions/commit/f8861aa))
-- 🎸 bump minimum version of angular-devkit/build-angular ([4a12101](https://github.com/klaascuvelier/extensions/commit/4a12101))
+-   🎸 deprecate deno package ([f91c018](https://github.com/klaascuvelier/extensions/commit/f91c018))
+-   upgrade nx ([f3393ae](https://github.com/klaascuvelier/extensions/commit/f3393ae))
+-   🎸 remove deno deploy from packages ([b1d2391](https://github.com/klaascuvelier/extensions/commit/b1d2391))
+-   🎸 deprecate sst package ([f8861aa](https://github.com/klaascuvelier/extensions/commit/f8861aa))
+-   🎸 bump minimum version of angular-devkit/build-angular ([4a12101](https://github.com/klaascuvelier/extensions/commit/4a12101))
 
 ### 🩹 Fixes
 
-- 🐛 deprecate correct package ([56637d5](https://github.com/klaascuvelier/extensions/commit/56637d5))
+-   🐛 deprecate correct package ([56637d5](https://github.com/klaascuvelier/extensions/commit/56637d5))
 
-### ❤️  Thank You
+### ❤️ Thank You
 
-- = @klaascuvelier
-- Klaas Cuvelier @klaascuvelier
+-   = @klaascuvelier
+-   Klaas Cuvelier @klaascuvelier
 
-#  [2.9.1](https://github.com/klaascuvelier/nx-additions/compare/vv2.9.0...v2.9.1) (2023-11-20)
+# [2.9.1](https://github.com/klaascuvelier/nx-additions/compare/vv2.9.0...v2.9.1) (2023-11-20)
 
 ### Bug Fixes
 
