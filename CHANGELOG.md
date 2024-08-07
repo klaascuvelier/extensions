@@ -1,3 +1,14 @@
+## 2.12.0 (2024-08-07)
+
+
+### 🚀 Features
+
+- **nx-cloudflare-wrangler:** fixes and improvements for tsconfig file for worker ([fb8a21d](https://github.com/klaascuvelier/extensions/commit/fb8a21d))
+
+### ❤️  Thank You
+
+- = @klaascuvelier
+
 ## 2.11.5 (2024-08-07)
 
 ### 🩹 Fixes
