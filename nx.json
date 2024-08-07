@@ -30,6 +30,11 @@
         "@nx/eslint:lint": {
             "inputs": ["default", "{workspaceRoot}/.eslintrc.json"],
             "cache": true
+        },
+        "nx-release-publish": {
+            "options": {
+                "packageRoot": "dist/{packageName}"
+            }
         }
     },
     "namedInputs": {

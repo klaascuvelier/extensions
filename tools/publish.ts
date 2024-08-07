@@ -1,5 +1,6 @@
 import { execSync } from 'child_process';
 
+execSync('npx nx run-many --target=build --all', { stdio: 'inherit' });
 execSync('npx nx release --skip-publish', { stdio: 'inherit' });
 const otp = getOtp();
 console.log('OTP,', otp);

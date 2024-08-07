@@ -4,7 +4,7 @@
     "scripts": {
         "nx": "nx",
         "start": "nx serve",
-        "build": "nx build",
+        "build": "nx run-many --target=build --all",
         "test": "echo \"nx test\"",
         "lint": "nx workspace-lint && nx lint",
         "e2e": "nx e2e",
@@ -24,6 +24,7 @@
         "dep-graph": "nx dep-graph",
         "help": "nx help",
         "prepare": "husky install",
+        "release": "npm run publish",
         "publish": "node -r @swc-node/register tools/publish.ts"
     },
     "private": true,
