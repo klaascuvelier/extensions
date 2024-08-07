@@ -1,3 +1,14 @@
+## 2.11.4 (2024-08-07)
+
+
+### 🩹 Fixes
+
+- path to package root ([0219eae](https://github.com/klaascuvelier/extensions/commit/0219eae))
+
+### ❤️  Thank You
+
+- = @klaascuvelier
+
 ## 2.11.3 (2024-08-07)
 
 ### 🩹 Fixes
