@@ -1,3 +1,14 @@
+## 2.11.5 (2024-08-07)
+
+
+### 🩹 Fixes
+
+- path to package root ([1205ce6](https://github.com/klaascuvelier/extensions/commit/1205ce6))
+
+### ❤️  Thank You
+
+- = @klaascuvelier
+
 ## 2.11.4 (2024-08-07)
 
 
