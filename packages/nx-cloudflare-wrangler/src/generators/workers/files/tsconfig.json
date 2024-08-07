@@ -1,9 +1,9 @@
 {
     "compilerOptions": {
         "outDir": "./dist",
-        "module": "commonjs",
+        "module": "esnext",
         "target": "esnext",
-        "lib": ["esnext"],
+        "lib": ["esnext", "dom"],
         "alwaysStrict": true,
         "strict": true,
         "preserveConstEnums": true,
