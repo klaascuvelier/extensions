@@ -1,3 +1,14 @@
+## 2.11.3 (2024-08-07)
+
+
+### 🩹 Fixes
+
+- path to package root ([a9b9a58](https://github.com/klaascuvelier/extensions/commit/a9b9a58))
+
+### ❤️  Thank You
+
+- = @klaascuvelier
+
 ## 2.11.2 (2024-08-07)
 
 This was a version bump only, there were no code changes.
