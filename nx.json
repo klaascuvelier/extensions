@@ -33,7 +33,7 @@
         },
         "nx-release-publish": {
             "options": {
-                "packageRoot": "dist/packages/{prjojectName}"
+                "packageRoot": "dist/packages/{projectName}"
             }
         }
     },
