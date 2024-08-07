@@ -1,24 +1,22 @@
 ## 2.11.5 (2024-08-07)
 
-
 ### 🩹 Fixes
 
-- path to package root ([1205ce6](https://github.com/klaascuvelier/extensions/commit/1205ce6))
+-   path to package root ([1205ce6](https://github.com/klaascuvelier/extensions/commit/1205ce6))
 
-### ❤️  Thank You
+### ❤️ Thank You
 
-- = @klaascuvelier
+-   = @klaascuvelier
 
 ## 2.11.4 (2024-08-07)
 
-
 ### 🩹 Fixes
 
-- path to package root ([0219eae](https://github.com/klaascuvelier/extensions/commit/0219eae))
+-   path to package root ([0219eae](https://github.com/klaascuvelier/extensions/commit/0219eae))
 
-### ❤️  Thank You
+### ❤️ Thank You
 
-- = @klaascuvelier
+-   = @klaascuvelier
 
 ## 2.11.3 (2024-08-07)
 
