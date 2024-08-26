@@ -17,10 +17,16 @@ export default async function buildExecutor(
             workspaceRoot,
             buildTarget.options.main,
         );
+        const tsconfigPath = joinPathFragments(
+            workspaceRoot,
+            buildTarget.options.tsConfig,
+        );
 
         execSync(`rm -rf ${outputPath} || true`);
         execSync(`mkdir -p ${outputPath}`);
-        execSync(`esbuild --bundle --outdir=${outputPath} ${entryFile} `);
+        execSync(
+            `esbuild --bundle --outdir=${outputPath} --tsconfig=${tsconfigPath} --platform=neutral ${entryFile} `,
+        );
     } catch (e) {
         console.error(e);
 

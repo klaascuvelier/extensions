@@ -1,8 +1,8 @@
 {
     "compilerOptions": {
         "outDir": "./dist",
-        "module": "esnext",
-        "target": "esnext",
+        "module": "ESNext",
+        "target": "ESNext",
         "lib": ["esnext", "dom"],
         "alwaysStrict": true,
         "strict": true,
