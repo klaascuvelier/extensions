@@ -8,7 +8,8 @@ export default async function buildExecutor(
 ) {
     try {
         const buildTarget =
-            context.workspace.projects[context.projectName].targets.build;
+            context.projectsConfigurations.projects[context.projectName].targets
+                .build;
         const outputPath = joinPathFragments(
             workspaceRoot,
             buildTarget.options.outputPath,

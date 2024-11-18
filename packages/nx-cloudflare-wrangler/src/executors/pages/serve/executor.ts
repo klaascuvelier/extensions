@@ -12,8 +12,8 @@ export default async function deployExecutor(
     }
     const dist = joinPathFragments(
         process.cwd(),
-        context.workspace.projects[context.projectName].targets.build.options
-            .outputPath,
+        context.projectsConfigurations.projects[context.projectName].targets
+            .build.options.outputPath,
     );
 
     const deployOptions = {
