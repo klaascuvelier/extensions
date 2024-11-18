@@ -20,7 +20,7 @@
         "rsync"
     ],
     "peerDependencies": {
-        "@angular-devkit/build-angular": "^18.0.3"
+        "@angular-devkit/build-angular": ">=18.0.0"
     },
     "executors": "./executors.json"
 }
