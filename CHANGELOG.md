@@ -1,24 +1,22 @@
 ## 2.13.0 (2024-08-26)
 
-
 ### 🚀 Features
 
-- **nx-cloudflare-wrangler:** use module syntax and fix platform neutral for esbuild ([a4acf17](https://github.com/klaascuvelier/extensions/commit/a4acf17))
+-   **nx-cloudflare-wrangler:** use module syntax and fix platform neutral for esbuild ([a4acf17](https://github.com/klaascuvelier/extensions/commit/a4acf17))
 
-### ❤️  Thank You
+### ❤️ Thank You
 
-- = @klaascuvelier
+-   = @klaascuvelier
 
 ## 2.12.0 (2024-08-07)
 
-
 ### 🚀 Features
 
-- **nx-cloudflare-wrangler:** fixes and improvements for tsconfig file for worker ([fb8a21d](https://github.com/klaascuvelier/extensions/commit/fb8a21d))
+-   **nx-cloudflare-wrangler:** fixes and improvements for tsconfig file for worker ([fb8a21d](https://github.com/klaascuvelier/extensions/commit/fb8a21d))
 
-### ❤️  Thank You
+### ❤️ Thank You
 
-- = @klaascuvelier
+-   = @klaascuvelier
 
 ## 2.11.5 (2024-08-07)
 
