@@ -1,3 +1,14 @@
+# 3.0.0 (2024-11-18)
+
+### 🩹 Fixes
+
+- improve angular peerDep for rsync-deployer ([0fa6649](https://github.com/klaascuvelier/extensions/commit/0fa6649))
+- context ([74b79e9](https://github.com/klaascuvelier/extensions/commit/74b79e9))
+
+### ❤️  Thank You
+
+- = @klaascuvelier
+
 ## 2.13.0 (2024-08-26)
 
 ### 🚀 Features
