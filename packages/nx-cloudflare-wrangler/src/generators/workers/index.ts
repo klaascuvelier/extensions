@@ -17,8 +17,7 @@ export default async function projectGenerator(
 ) {
     await applicationGenerator(tree, schema);
 
-    const appName =
-        (schema.directory ? `${schema.directory}-` : '') + schema.name;
+    const appName = schema.name;
     const projectConfiguration = readProjectConfiguration(tree, appName);
     const projectRoot = projectConfiguration.root;
 
