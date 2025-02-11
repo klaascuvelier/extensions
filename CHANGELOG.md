@@ -1,3 +1,31 @@
+## 3.0.2 (2025-02-11)
+
+### 🚀 Features
+
+- 🎸 deprecate deno package ([f91c018](https://github.com/klaascuvelier/nx-additions/commit/f91c018))
+- upgrade nx ([f3393ae](https://github.com/klaascuvelier/nx-additions/commit/f3393ae))
+- 🎸 remove deno deploy from packages ([b1d2391](https://github.com/klaascuvelier/nx-additions/commit/b1d2391))
+- 🎸 deprecate sst package ([f8861aa](https://github.com/klaascuvelier/nx-additions/commit/f8861aa))
+- 🎸 bump minimum version of angular-devkit/build-angular ([4a12101](https://github.com/klaascuvelier/nx-additions/commit/4a12101))
+- **nx-cloudflare-wrangler:** fixes and improvements for tsconfig file for worker ([fb8a21d](https://github.com/klaascuvelier/nx-additions/commit/fb8a21d))
+- **nx-cloudflare-wrangler:** use module syntax and fix platform neutral for esbuild ([a4acf17](https://github.com/klaascuvelier/nx-additions/commit/a4acf17))
+
+### 🩹 Fixes
+
+- 🐛 deprecate correct package ([56637d5](https://github.com/klaascuvelier/nx-additions/commit/56637d5))
+- path to package root ([a9b9a58](https://github.com/klaascuvelier/nx-additions/commit/a9b9a58))
+- path to package root ([0219eae](https://github.com/klaascuvelier/nx-additions/commit/0219eae))
+- path to package root ([1205ce6](https://github.com/klaascuvelier/nx-additions/commit/1205ce6))
+- improve angular peerDep for rsync-deployer ([0fa6649](https://github.com/klaascuvelier/nx-additions/commit/0fa6649))
+- context ([74b79e9](https://github.com/klaascuvelier/nx-additions/commit/74b79e9))
+- remove incorrect peer dep ([1e08e41](https://github.com/klaascuvelier/nx-additions/commit/1e08e41))
+- require directory property, leave out dir name in app name ([4f99a6e](https://github.com/klaascuvelier/nx-additions/commit/4f99a6e))
+
+### ❤️ Thank You
+
+- = @klaascuvelier
+- Klaas Cuvelier @klaascuvelier
+
 # 3.0.0 (2024-11-18)
 
 ### 🩹 Fixes
