@@ -1,3 +1,13 @@
+## 3.0.3 (2025-03-07)
+
+### 🩹 Fixes
+
+- **nx-cloudflare-wrangler:** add config file to output ([569a898](https://github.com/klaascuvelier/nx-additions/commit/569a898))
+
+### ❤️ Thank You
+
+- = @klaascuvelier
+
 ## 3.0.2 (2025-02-11)
 
 ### 🚀 Features

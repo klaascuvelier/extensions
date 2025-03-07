@@ -1,6 +1,6 @@
 {
     "name": "@k11r/nx-netlify-deploy",
-    "version": "3.0.2",
+    "version": "3.0.3",
     "description": "Nx Plugin for Netlify",
     "repository": {
         "type": "git",
