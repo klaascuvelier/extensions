@@ -1,3 +1,13 @@
+## 3.1.0 (2025-03-07)
+
+### 🚀 Features
+
+- **nx-cloudflare-wrangler:** copy assets for worker ([a40dfa7](https://github.com/klaascuvelier/nx-additions/commit/a40dfa7))
+
+### ❤️ Thank You
+
+- = @klaascuvelier
+
 ## 3.0.3 (2025-03-07)
 
 ### 🩹 Fixes
