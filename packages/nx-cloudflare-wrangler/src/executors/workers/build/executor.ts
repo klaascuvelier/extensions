@@ -1,5 +1,6 @@
 import { ExecutorContext, joinPathFragments, workspaceRoot } from '@nx/devkit';
 import { execSync } from 'child_process';
+import * as fs from 'fs-extra';
 import { WorkerBuildExecutorSchema } from './schema';
 
 export default async function buildExecutor(
@@ -35,6 +36,30 @@ export default async function buildExecutor(
             `esbuild --bundle --outdir=${outputPath} --tsconfig=${tsconfigPath} --platform=neutral ${entryFile}`,
         );
         execSync(`cp ${wranglerConfigFile} ${outputPath}`);
+
+        const assets = buildTarget.options.assets || [];
+        for (const asset of assets) {
+            if (typeof asset === 'string') {
+                const assetPath = joinPathFragments(workspaceRoot, asset);
+                fs.copySync(assetPath, outputPath, { recursive: true });
+            } else if (
+                typeof asset === 'object' &&
+                asset.input &&
+                asset.output
+            ) {
+                const assetInputPath = joinPathFragments(
+                    workspaceRoot,
+                    asset.input,
+                );
+                const assetOutputPath = joinPathFragments(
+                    outputPath,
+                    asset.output,
+                );
+                fs.copySync(assetInputPath, assetOutputPath, {
+                    recursive: true,
+                });
+            }
+        }
     } catch (e) {
         console.error(e);
 
