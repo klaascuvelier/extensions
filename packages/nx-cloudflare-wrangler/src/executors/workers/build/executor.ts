@@ -10,6 +10,12 @@ export default async function buildExecutor(
         const buildTarget =
             context.projectsConfigurations.projects[context.projectName].targets
                 .build;
+
+        const wranglerConfigFile = joinPathFragments(
+            workspaceRoot,
+            buildTarget.options.wranglerConfig,
+        );
+
         const outputPath = joinPathFragments(
             workspaceRoot,
             buildTarget.options.outputPath,
@@ -26,8 +32,9 @@ export default async function buildExecutor(
         execSync(`rm -rf ${outputPath} || true`);
         execSync(`mkdir -p ${outputPath}`);
         execSync(
-            `esbuild --bundle --outdir=${outputPath} --tsconfig=${tsconfigPath} --platform=neutral ${entryFile} `,
+            `esbuild --bundle --outdir=${outputPath} --tsconfig=${tsconfigPath} --platform=neutral ${entryFile}`,
         );
+        execSync(`cp ${wranglerConfigFile} ${outputPath}`);
     } catch (e) {
         console.error(e);
 

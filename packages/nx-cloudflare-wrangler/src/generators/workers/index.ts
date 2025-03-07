@@ -77,6 +77,7 @@ function addTargets(tree: Tree, appName: string) {
                     outputPath: `dist/packages/${appName}`,
                     tsConfig: `${packageRoot}/tsconfig.json`,
                     packageJson: `${packageRoot}/package.json`,
+                    wranglerConfig: `${packageRoot}/wrangler.toml`,
                     main: `${packageSourceRoot}/index.ts`,
                 },
             },
