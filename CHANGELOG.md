@@ -1,3 +1,7 @@
+## 3.3.1 (2025-03-13)
+
+This was a version bump only, there were no code changes.
+
 ## 3.3.0 (2025-03-13)
 
 ### 🚀 Features
