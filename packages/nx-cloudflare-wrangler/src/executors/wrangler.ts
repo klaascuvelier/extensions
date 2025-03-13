@@ -4,7 +4,7 @@ import {
     readProjectConfiguration,
     workspaceRoot,
 } from '@nx/devkit';
-import { execSync } from 'child_process';
+import { spawn } from 'child_process';
 import { FsTree } from 'nx/src/generators/tree';
 import { PagesDeployExecutorSchema } from './pages/deploy/schema';
 import { WorkerDeployExecutorSchema } from './workers/deploy/schema';
@@ -73,11 +73,30 @@ export function runWranglerCommandForProject(
     return new Promise((resolve) => {
         try {
             console.log(`npx wrangler ${command} ${wranglerOptions.join(' ')}`);
-            execSync(`npx wrangler ${command} ${wranglerOptions.join(' ')}`, {
-                cwd: projectConfiguration.root,
-                stdio: 'inherit',
+            const childProcess = spawn(
+                'npx',
+                ['wrangler', command, ...wranglerOptions],
+                {
+                    cwd: projectConfiguration.root,
+                    stdio: 'inherit',
+                    shell: true,
+                },
+            );
+
+            childProcess.on('error', (error) => {
+                resolve({ success: false, message: error });
             });
-            resolve({ success: true });
+
+            childProcess.on('exit', (code) => {
+                if (code === 0) {
+                    resolve({ success: true });
+                } else {
+                    resolve({
+                        success: false,
+                        message: `Process exited with code ${code}`,
+                    });
+                }
+            });
         } catch (e) {
             resolve({ success: false, message: e });
         }
