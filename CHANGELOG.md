@@ -1,3 +1,13 @@
+## 3.3.0 (2025-03-13)
+
+### 🚀 Features
+
+- **nx-cloudflare-wrangler:** update wrangler ([f231c39](https://github.com/klaascuvelier/nx-additions/commit/f231c39))
+
+### ❤️ Thank You
+
+- = @klaascuvelier
+
 ## 3.2.0 (2025-03-13)
 
 ### 🚀 Features
