@@ -71,16 +71,6 @@ function addTargets(tree: Tree, appName: string) {
             deploy: {
                 executor: '@k11r/nx-cloudflare-wrangler:deploy-worker',
             },
-            build: {
-                executor: '@k11r/nx-cloudflare-wrangler:build-worker',
-                options: {
-                    outputPath: `dist/packages/${appName}`,
-                    tsConfig: `${packageRoot}/tsconfig.json`,
-                    packageJson: `${packageRoot}/package.json`,
-                    wranglerConfig: `${packageRoot}/wrangler.toml`,
-                    main: `${packageSourceRoot}/index.ts`,
-                },
-            },
         };
 
         updateProjectConfiguration(tree, appName, projectConfiguration);

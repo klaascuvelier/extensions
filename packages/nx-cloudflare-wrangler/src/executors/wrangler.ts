@@ -54,13 +54,7 @@ export function runWranglerCommandForProject(
     } else if (command === 'pages dev') {
         wranglerOptions.push((options as PagesDeployExecutorSchema).dist);
     } else if (command === 'deploy') {
-        wranglerOptions.push(
-            joinPathFragments(
-                workspaceRoot,
-                projectConfiguration.targets.build.options.outputPath,
-                'index.js',
-            ),
-        );
+        // no extra optiones needed
     } else if (command === 'dev') {
         wranglerOptions.push(
             joinPathFragments(
