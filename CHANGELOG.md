@@ -1,3 +1,17 @@
+## 3.3.2 (2025-04-26)
+
+### 🚀 Features
+
+- **nx-cloudflare-wrangler:** remove build ([b8e1764](https://github.com/klaascuvelier/extensions/commit/b8e1764))
+
+### 🩹 Fixes
+
+- use output path option to fix esbuild issue ([f8517aa](https://github.com/klaascuvelier/extensions/commit/f8517aa))
+
+### ❤️  Thank You
+
+- = @klaascuvelier
+
 ## 3.3.1 (2025-03-13)
 
 This was a version bump only, there were no code changes.
