@@ -1,6 +1,6 @@
 {
     "name": "@k11r/nx-rsync-deployer",
-    "version": "3.0.1",
+    "version": "3.3.1",
     "description": "Nx Plugin for deploy using RSync",
     "repository": {
         "type": "git",
@@ -19,8 +19,5 @@
         "deploy",
         "rsync"
     ],
-    "peerDependencies": {
-        "@angular-devkit/build-angular": ">=18.0.0"
-    },
     "executors": "./executors.json"
 }

@@ -1,0 +1,8 @@
+{
+    "name": "<%= name %>",
+    "account_id": "<%= account_id %>",
+    "route": "<%= route %>",
+    "workers_dev": true,
+    "compatibility_date": "<%= compatibility_date %>",
+    "compatibility_flags": ["nodejs_compat"]
+}

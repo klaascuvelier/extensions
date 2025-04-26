@@ -17,8 +17,7 @@ export default async function projectGenerator(
 ) {
     await applicationGenerator(tree, schema);
 
-    const appName =
-        (schema.directory ? `${schema.directory}-` : '') + schema.name;
+    const appName = schema.name;
     const projectConfiguration = readProjectConfiguration(tree, appName);
     const projectRoot = projectConfiguration.root;
 
@@ -71,15 +70,6 @@ function addTargets(tree: Tree, appName: string) {
 
             deploy: {
                 executor: '@k11r/nx-cloudflare-wrangler:deploy-worker',
-            },
-            build: {
-                executor: '@k11r/nx-cloudflare-wrangler:build-worker',
-                options: {
-                    outputPath: `dist/packages/${appName}`,
-                    tsConfig: `${packageRoot}/tsconfig.json`,
-                    packageJson: `${packageRoot}/package.json`,
-                    main: `${packageSourceRoot}/index.ts`,
-                },
             },
         };
 

@@ -1,6 +1,6 @@
 {
     "name": "@k11r/nx-cloudflare-wrangler",
-    "version": "3.0.1",
+    "version": "3.3.1",
     "description": "Nx Plugin for Cloudflare Wrangler",
     "repository": {
         "type": "git",
@@ -25,6 +25,6 @@
         "@nx/devkit": ">=17.0.0",
         "@nx/node": ">=17.0.0",
         "esbuild": "~0.19.0",
-        "wrangler": "^3.0.0"
+        "wrangler": "^4.0.0"
     }
 }

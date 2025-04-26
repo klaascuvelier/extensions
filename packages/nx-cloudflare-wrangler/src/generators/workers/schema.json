@@ -4,6 +4,10 @@
     "$id": "CloudflareWorkerProject",
     "type": "object",
     "properties": {
+        "directory": {
+            "type": "string",
+            "description": "Path to create the worker in"
+        },
         "name": {
             "type": "string",
             "description": "Identifier for the worker",
@@ -30,5 +34,5 @@
             "description": "Workers Dev"
         }
     },
-    "required": ["name"]
+    "required": ["name", "directory"]
 }
