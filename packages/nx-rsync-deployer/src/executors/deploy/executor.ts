@@ -116,7 +116,10 @@ function extractConfig(config) {
         .map(addPrePostDeployReplacements)
         .join(`,`);
 
+    const outputPath = config.outputPath ?? '';
+
     return {
+        outputPath,
         deployIdentifier,
         rsyncTarget,
         rsyncUser,
