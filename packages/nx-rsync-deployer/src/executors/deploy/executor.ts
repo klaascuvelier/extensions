@@ -25,6 +25,7 @@ export default async function runExecutor(
 ) {
     const projectName = context.projectName;
     const {
+        outputPath,
         deployIdentifier,
         previewUrl,
         rsyncTarget,
@@ -36,7 +37,8 @@ export default async function runExecutor(
 
     const tree = new FsTree(process.cwd(), false);
     const projectInfo = readProjectConfiguration(tree, projectName);
-    const buildOutputPath = projectInfo.targets['build'].options.outputPath;
+    const buildOutputPath =
+        projectInfo.targets['build'].options.outputPath + (outputPath ?? '');
     const deployUrl =
         previewUrl.replace('$deployIdentifier', deployIdentifier) +
         (previewUrl.endsWith('/') ? '' : '/');
